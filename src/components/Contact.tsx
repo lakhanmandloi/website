@@ -1,14 +1,10 @@
-export default function BasicInfo() {
+export default function Contact() {
   return (
-    <div className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none ">
+    <div className="rounded-xl bg-white p-6 shadow print:shadow-none">
       <h3 className="mb-6 border-b-2 border-gray-100 pb-2 text-lg font-semibold">
-        Information
+        Contact
       </h3>
       <div className="space-y-4">
-        <div className="flex justify-between">
-          <div className="text-gray-400">Experience</div>
-          <div className="text-right font-medium text-gray-600">8+ years</div>
-        </div>
         <div className="flex justify-between">
           <div className="text-gray-400">Location</div>
           <div className="text-right font-medium text-gray-600">
@@ -16,8 +12,8 @@ export default function BasicInfo() {
           </div>
         </div>
         <div className="flex justify-between">
-          <div className="text-gray-400">Remote</div>
-          <div className="text-right font-medium text-gray-600">Yes</div>
+          <div className="text-gray-400">Experience</div>
+          <div className="text-right font-medium text-gray-600">8+ years</div>
         </div>
         <div className="flex justify-between">
           <div className="text-gray-400">Relocation</div>

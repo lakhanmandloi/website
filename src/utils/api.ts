@@ -1,6 +1,19 @@
 import { cache } from 'react';
+
 export const revalidate = 3600;
-interface Company {
+
+export interface Project {
+  id: number;
+  title: string;
+  url: string;
+  details: string;
+  rolesResponsibilities: string;
+  startDate: string;
+  endDate?: string;
+  skills?: string[];
+  assets?: string[];
+}
+export interface Company {
   id: number;
   name: string;
   logo: string;
@@ -12,21 +25,12 @@ interface Company {
   roles: {
     id: number;
     title: string;
-    rolesResponsibilities: string;
+    responsibilities: string;
     startDate: string;
     endDate?: string;
     skills: string[];
   }[];
-  projects: {
-    id: number;
-    title: string;
-    url: string;
-    details: string;
-    rolesResponsibilities: string;
-    startDate: string;
-    endDate?: string;
-    skills: string[];
-  }[];
+  projects: Project[];
 }
 
 export const getExperience = cache(async () => {
@@ -44,19 +48,33 @@ export const getExperience = cache(async () => {
         {
           id: 2,
           title: 'Senior Software Engineer',
-          rolesResponsibilities: '',
+          responsibilities: `
+          - Lead front-end development.
+          - Mentor junior developers.
+          - Ensure code quality and standards.
+          - Optimize website performance.
+          - Stay updated on front-end technologies.
+          - Solve complex technical challenges.
+          `,
           startDate: '2022-04-01',
           endDate: undefined,
-          skills: [],
+          skills: []
         },
         {
           id: 1,
           title: 'Software Engineer',
-          rolesResponsibilities: '',
+          responsibilities: `
+          - Lead front-end development.
+          - Mentor junior developers.
+          - Ensure code quality and standards.
+          - Optimize website performance.
+          - Stay updated on front-end technologies.
+          - Solve complex technical challenges.
+          `,
           startDate: '2019-09-30',
           endDate: '2022-03-30',
-          skills: [],
-        },
+          skills: []
+        }
       ],
       projects: [
         {
@@ -67,19 +85,19 @@ export const getExperience = cache(async () => {
           rolesResponsibilities: '',
           startDate: '2019-09-30',
           endDate: '2022-03-30',
-          skills: [],
+          skills: []
         },
         {
           id: 1,
-          title: 'CITIC CLSA Website',
+          title: 'CITIC CLSA Corporate Website',
           url: '',
           details: '',
           rolesResponsibilities: '',
           startDate: '2019-09-30',
           endDate: '2022-03-30',
-          skills: [],
-        },
-      ],
+          skills: []
+        }
+      ]
     },
     {
       id: 1,
@@ -94,6 +112,55 @@ export const getExperience = cache(async () => {
         {
           id: 2,
           title: 'Senior Software Developer',
+          responsibilities: `
+          - **UI Leadership & Innovation:**
+            - Led UI development, fostering innovation through R&D.
+            - Created POCs and set development standards.
+            - Conducted code reviews and mentored team.
+
+          - **Technical Solutions Expertise:**
+            - Analyzed project needs for optimal solutions.
+            - Guided teams with tech stack knowledge.
+
+          - **Client Engagement:**
+            - Key client contact for transparent communication.
+            - Provided regular updates, ensuring satisfaction.
+
+          - **Strategic Planning & Resources:**
+            - Developed project roadmaps and managed resources efficiently.
+          `,
+          startDate: '2017-05-01',
+          endDate: '2019-09-20',
+          skills: []
+        },
+        {
+          id: 1,
+          title: 'Webmaster',
+          responsibilities: `
+          - Lead front-end development.
+          - Mentor junior developers.
+          - Ensure code quality and standards.
+          - Optimize website performance.
+          - Stay updated on front-end technologies.
+          - Solve complex technical challenges.
+          `,
+          startDate: '2015-01-21',
+          endDate: '2017-05-01',
+          skills: []
+        }
+      ],
+      projects: [
+        {
+          id: 2,
+          title: 'DIKSHA',
+          url: 'https://diksha.gov.in/',
+          details: `
+          DIKSHA is a popular Indian government learning website and app that millions of people use. The main challenge was around inclusion and diversity of users, as India has more than 38 languages. Other challenges included slow mobile networks in rural areas.
+          Challenge solutions:
+          - Multilingual UI with a unique and fresh approach to fulfil the requirements. Implementation blog can be found here - https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha & Implementation can be seen here - https://diksha.gov.in/explore
+          - Implemented Design System - https://sunbird-ed.github.io/sunbird-style-guide/dist/#/
+          - Performance
+          `,
           rolesResponsibilities: `
           - **Leadership in UI Development and Innovation:**
             - Spearheaded UI development efforts, driving innovation through research and development (R&D)
@@ -109,36 +176,16 @@ export const getExperience = cache(async () => {
             - Developed comprehensive project roadmaps, meticulously planning project milestones and deliveries
             - Skillfully allocated resources to optimize team performance, aligning assignments with individual strengths and project demands.
           `,
-          startDate: '2017-05-01',
-          endDate: '2019-09-20',
-          skills: [],
-        },
-        {
-          id: 1,
-          title: 'Webmaster',
-          rolesResponsibilities: '',
-          startDate: '2015-01-21',
-          endDate: '2017-05-01',
-          skills: [],
-        },
-      ],
-      projects: [
-        {
-          id: 2,
-          title: 'DIKSHA',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
           startDate: '2019-09-30',
           endDate: '2022-03-30',
-          skills: [],
-        },
-      ],
-    },
+          skills: []
+        }
+      ]
+    }
   ];
   return experience;
 });
-interface Education {
+export interface Education {
   id: number;
   name: string;
   logo: string;
@@ -158,7 +205,7 @@ export const getEducation = cache(async () => {
       school: 'Malwa Institute of Technology',
       affiliation: 'RGPV, Bhopal',
       startDate: '2007-09-10',
-      endDate: '2011-12-30',
+      endDate: '2011-12-30'
     },
     {
       id: 1,
@@ -168,8 +215,8 @@ export const getEducation = cache(async () => {
       school: 'Vivekanand Vidya Vihar, Maral Sarovar',
       affiliation: 'CBSE, Delhi',
       startDate: '1993-07-01',
-      endDate: '2004-03-30',
-    },
+      endDate: '2004-03-30'
+    }
   ];
   return education;
 });
