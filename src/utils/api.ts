@@ -82,8 +82,8 @@ export const getExperience = cache(async () => {
           url: '',
           details: '',
           rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
+          startDate: '2020-05-05',
+          endDate: undefined,
           skills: []
         },
         {
@@ -93,7 +93,7 @@ export const getExperience = cache(async () => {
           details: '',
           rolesResponsibilities: '',
           startDate: '2019-09-30',
-          endDate: '2022-03-30',
+          endDate: '2022-09-30',
           skills: []
         }
       ]
@@ -158,69 +158,176 @@ export const getExperience = cache(async () => {
           `,
           rolesResponsibilities: `
           `,
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
+          startDate: '2017-08-25',
+          endDate: '2019-09-20',
           skills: []
         },
         {
           id: 'tekdi-sunbird',
           title: 'Sunbird',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
+          url: 'https://github.com/Sunbird-Ed/SunbirdEd-portal',
+          details: `Sunbird is an open source learning management platform developed by EkStep Foundation. EkStep Foundation is a not for profit foundation registered in India and co-founded by Nandan Nilekani.`,
+          rolesResponsibilities: `
+          - UI development, do estimations & planning and help the team whenever required.
+          - Do R&D, prepare POC & standard guidelines
+          `,
+          startDate: '2018-06-10',
+          endDate: '2019-09-20',
+          skills: ['SASS', 'Bourbon', 'Semantic UI', 'Angular']
         },
         {
           id: 'tekdi-sunbird-docs',
           title: 'Sunbird Documentation Portal',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
+          url: 'https://sunbird.org/',
+          details: ` A multi-version documentation website for Project Sunbird. A unique docs contribution build pipeline is quite interesting & is quite lengthy to write in here.`,
+          rolesResponsibilities: `
+          - Full stack development - DevOps, UI and Jekyll plugin development
+          - Do estimations & planning and help the team whenever required.
+          - Do R&D and prepare POC.
+          `,
+          startDate: '2017-08-15',
+          endDate: '2019-09-20',
+          skills: [
+            'Jekyll',
+            'Docker',
+            'CircleCI',
+            'Nginx',
+            'Shell scripting',
+            'ReDoc'
+          ]
         },
         {
-          id: 'tekdi-climathon',
-          title: 'Climathon',
-          url: '',
-          details: '',
+          id: 'tekdi-artificiers',
+          title: 'Artificiers Library',
+          url: 'https://github.com/lakhanmandloi/artificers',
+          details: `A CSS Utlility library.`,
           rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
-        },
-        {
-          id: 'tekdi-climate-kic-learning',
-          title: 'Climate-KIC Learning Portal',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
-        },
-        {
-          id: 'tekdi-pip',
-          title: 'Climate-KIC Pioneers into Practice',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
+          startDate: '2017-05-15',
+          endDate: '2019-09-20',
+          skills: ['Product Owner', 'Technical Lead', 'SCSS', 'CSS']
         },
         {
           id: 'tekdi-tjbase',
           title: 'Tjbase template for Joomla',
           url: '',
-          details: '',
+          details: `An ultra lightweight template for Joomla CMS. Focused mainly on Performance optimisation, SEO, automation and Code reusability. Used on a website with traffic of 2 million visits per day.`,
           rolesResponsibilities: '',
-          startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
+          startDate: '2016-04-15',
+          endDate: '2019-09-20',
+          skills: [
+            'Product Owner',
+            'Technical Lead',
+            'Joomla',
+            'PHP',
+            'HTML',
+            'SCSS',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Git',
+            'Bootstrap'
+          ]
+        },
+        {
+          id: 'tekdi-cp',
+          title: 'EIT Climate-KIC : Certified Professionals',
+          url: '',
+          details: `Certified Professionals is a platform for the EIT Climate-KIC Alumni to showcase their skills and expertise to the world.`,
+          rolesResponsibilities: `
+          - Designing, developing, and maintaining the visual and interactive elements of web application.
+          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
+          startDate: '2016-06-07',
+          endDate: '2017-08-30',
+          skills: [
+            'Technical Lead',
+            'Joomla',
+            'PHP',
+            'HTML',
+            'SCSS',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Git',
+            'Bootstrap'
+          ]
+        },
+        {
+          id: 'tekdi-pip',
+          title: 'EIT Climate-KIC : Pioneers into Practice',
+          url: 'https://pioneers.climate-kic.org/',
+          details: `Pioneers into Practice is a professional mobility programme for climate change professionals. It is a learning journey that takes place in different European countries.`,
+          rolesResponsibilities: `
+          - Designing, developing, and maintaining the visual and interactive elements of web application.
+          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
+          startDate: '2016-06-07',
+          endDate: '2017-08-30',
+          skills: [
+            'Technical Lead',
+            'Joomla',
+            'PHP',
+            'HTML',
+            'SCSS',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Git',
+            'Bootstrap'
+          ]
+        },
+        {
+          id: 'tekdi-climathon',
+          title: 'EIT Climate-KIC : Climathon',
+          url: 'https://climathon.climate-kic.org/',
+          details: `Climathon is an annual global event that brings together the challenges of the world's cities with people who have the passion and ability to solve them.`,
+          rolesResponsibilities: `
+          - Understand the project requirement from the client, analyse it and mould it into a technical requirements with the best possible solution.
+          - Plan the roadmap, deliveries and resource allocation.
+          - Client communication for requirement gathering and progress updates.
+          - Designing, developing, and maintaining the visual and interactive elements of web application.
+          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
+          startDate: '2016-06-07',
+          endDate: '2017-08-30',
+          skills: [
+            'Scrum Master',
+            'Technical Lead',
+            'Joomla',
+            'PHP',
+            'HTML',
+            'SCSS',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Git',
+            'Bootstrap'
+          ]
+        },
+        {
+          id: 'tekdi-climate-kic-learning',
+          title: 'EIT Climate-KIC : Learning Portal',
+          url: 'https://learning.climate-kic.org/',
+          details: `EIT Climate-KIC is Europe’s largest public-private innovation partnership focused on climate innovation to mitigate and adapt to climate change.`,
+          rolesResponsibilities: `
+          - Understand the project requirement from the client, analyse it and mould it into a technical requirements with the best possible solution.
+          - Plan the roadmap, deliveries and resource allocation.
+          - Client communication for requirement gathering and progress updates.
+          - Designing, developing, and maintaining the visual and interactive elements of web application.
+          - Support & analyse the technical issue the client or end-user raised and take appropriate action.
+          - *Scrum master and technical lead for the project: June 2016 onwards*.`,
+          startDate: '2015-04-15',
+          endDate: '2017-08-30',
+          skills: [
+            'Scrum Master',
+            'Technical Lead',
+            'Joomla',
+            'PHP',
+            'HTML',
+            'SCSS',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Git',
+            'Bootstrap'
+          ]
         }
       ]
     }
