@@ -1,5 +1,10 @@
-import { ArrowDownTrayIcon, LinkIcon } from '@heroicons/react/24/outline';
-import { EnvelopeIcon, PhoneIcon } from '@heroicons/react/24/solid';
+import {
+  ArrowDownTrayIcon,
+  EnvelopeIcon,
+  LinkIcon,
+  MapPinIcon,
+  PhoneIcon
+} from '@heroicons/react/24/outline';
 import { SiGithub, SiLinkedin } from '@icons-pack/react-simple-icons';
 
 import Image from 'next/image';
@@ -17,8 +22,8 @@ export default function Headline() {
   }
   const links: ILink[] = [
     {
-      displayText: '+91 975 4945 975',
-      printText: '+91 975 4945 975',
+      displayText: '+91-9754945975',
+      printText: '+91-9754945975',
       tooltip: 'Call me',
       href: 'tel:+919754945975',
       icon: <PhoneIcon className="w-4" />,
@@ -35,8 +40,8 @@ export default function Headline() {
       print: true
     },
     {
-      displayText: 'https://lakhanmandloi.in',
-      printText: 'https://lakhanmandloi.in',
+      displayText: 'lakhanmandloi.in',
+      printText: 'lakhanmandloi.in',
       tooltip: 'Visit my website',
       href: 'https://lakhanmandloi.in',
       icon: <LinkIcon className="w-4" />,
@@ -45,19 +50,19 @@ export default function Headline() {
     },
     {
       displayText: 'lakhanmandloi',
-      printText: 'https://github.com/lakhanmandloi',
+      printText: 'lakhanmandloi',
+      tooltip: 'See my GitHub Profile',
       href: 'https://github.com/lakhanmandloi',
       icon: <SiGithub className="w-4" />,
-      tooltip: 'See my GitHub Profile',
       display: true,
       print: true
     },
     {
       displayText: 'lakhanmandloi',
-      printText: 'https://www.linkedin.com/in/lakhanmandloi',
+      printText: 'lakhanmandloi',
+      tooltip: 'See my LinkedIn Profile',
       href: 'https://www.linkedin.com/in/lakhanmandloi',
       icon: <SiLinkedin className="w-4" />,
-      tooltip: 'See my LinkedIn Profile',
       display: true,
       print: true
     }
@@ -66,50 +71,64 @@ export default function Headline() {
   const LinkTag = ({ link }: { link: ILink }) => {
     return (
       <a
-        className={`mr-4 cursor-pointer items-center print:mb-2 ${
+        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 print:mb-1 print:mr-4 print:text-xs md:mr-4 xl:ml-4 xl:mr-0 ${
           !link.display ? 'hidden' : 'flex'
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
         href={link.href}
       >
-        <span className="mr-2">{link.icon}</span>
-        <span className="text-sm font-semibold text-violet-900 print:hidden">
-          {link.displayText}
-        </span>
-        <span className="hidden text-sm font-semibold text-violet-900 print:inline">
-          {link.printText}
-        </span>
+        <span className="mr-2 text-gray-400 print:mr-1">{link.icon}</span>
+        <span className="print:hidden">{link.displayText}</span>
+        <span className="hidden print:inline">{link.printText}</span>
       </a>
     );
   };
 
   return (
-    <header className="mx-auto max-w-5xl space-y-5 overflow-hidden rounded-xl bg-white shadow print:rounded-none print:border-b-2 print:shadow-none">
-      <div className="relative h-40 overflow-visible bg-[url('/images/banner.jpg')] bg-cover bg-fixed print:bg-local">
-        <div className="translate-1/2 absolute -bottom-10 z-10 flex w-full items-end justify-between px-8">
+    <header className="mx-auto w-full space-y-5 overflow-hidden rounded-xl bg-white shadow print:rounded-none print:border-b-2 print:shadow-none lg:max-w-5xl">
+      <div className="relative h-28 overflow-visible bg-[url('/images/banner.jpg')] bg-cover bg-fixed print:bg-local md:h-40">
+        <div className="translate-1/2 print:space-between absolute -bottom-10 z-10 flex w-full items-end px-8 print:justify-between">
           <Image
             src="/images/avatar.png"
             alt="Lakhan Mandloi"
-            className="cursor-pointer rounded-full bg-pink-200 p-0.5 shadow-md"
+            className="cursor-pointer rounded-full bg-pink-200 shadow-md"
             width={80}
             height={80}
           />
         </div>
       </div>
-      <div className="flex flex-col p-6 pt-8 print:p-2 print:pt-6">
-        <div className="flex items-start justify-between">
-          <div>
-            <h1 className="text-2xl font-semibold">
+      <div className="flex flex-col p-6 pt-8 print:p-8 print:pb-4">
+        <div className="flex flex-col items-start justify-between md:mb-4 xl:flex-row xl:items-center">
+          <div className="whitespace-nowrap">
+            <h1 className="text-2xl font-semibold print:text-lg">
               Lakhan Mandloi
               <span className="ml-2 text-sm font-light print:hidden">
                 (He/Him)
               </span>
             </h1>
-            <div className="mb-7 text-base text-gray-400 print:mb-3">
-              Senior Software Developer
+            <div className="mb-3 text-base text-gray-400 print:mb-3 print:text-sm xl:mb-0">
+              Frontend Developer (8+ YoE)
             </div>
           </div>
-          <div className="group flex rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden">
+          <div className="flex flex-col items-end justify-between">
+            <nav className="flex flex-col flex-wrap print:flex-row md:flex-row">
+              {links.map((link) => {
+                return (
+                  <LinkTag
+                    link={link}
+                    key={link.href}
+                  />
+                );
+              })}
+            </nav>
+          </div>
+        </div>
+        <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
+          <address className="flex items-center text-sm text-gray-500 print:text-xs">
+            <MapPinIcon className="mr-2 w-4 text-gray-400" /> Indore, Madhya
+            Pradesh, India
+          </address>
+          <div className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden">
             <button className="w-full rounded-l-lg px-4 py-2">
               Download Resume
             </button>
@@ -117,16 +136,6 @@ export default function Headline() {
               <ArrowDownTrayIcon className="w-5" />
             </button>
           </div>
-        </div>
-        <div className="flex flex-wrap">
-          {links.map((link) => {
-            return (
-              <LinkTag
-                link={link}
-                key={link.href}
-              />
-            );
-          })}
         </div>
       </div>
     </header>

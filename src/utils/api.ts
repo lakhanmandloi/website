@@ -3,7 +3,7 @@ import { cache } from 'react';
 export const revalidate = 3600;
 
 export interface Project {
-  id: number;
+  id: string;
   title: string;
   url: string;
   details: string;
@@ -14,7 +14,7 @@ export interface Project {
   assets?: string[];
 }
 export interface Company {
-  id: number;
+  id: string;
   name: string;
   logo: string;
   url: string;
@@ -23,12 +23,11 @@ export interface Company {
   startDate: string;
   endDate?: string;
   roles: {
-    id: number;
+    id: string;
     title: string;
     responsibilities: string;
     startDate: string;
     endDate?: string;
-    skills: string[];
   }[];
   projects: Project[];
 }
@@ -36,7 +35,7 @@ export interface Company {
 export const getExperience = cache(async () => {
   const experience: Company[] = [
     {
-      id: 2,
+      id: 'clsa',
       name: 'CLSA Technology & Services LLP',
       logo: '/images/logo-clsa.png',
       url: 'https://www.clsa.com',
@@ -46,39 +45,39 @@ export const getExperience = cache(async () => {
       endDate: undefined,
       roles: [
         {
-          id: 2,
+          id: 'clsa-sse',
           title: 'Senior Software Engineer',
           responsibilities: `
-          - Lead front-end development.
-          - Mentor junior developers.
-          - Ensure code quality and standards.
-          - Optimize website performance.
-          - Stay updated on front-end technologies.
-          - Solve complex technical challenges.
+          - Designing, developing, and maintaining the visual and interactive elements of web applications.
+          - Integrating GraphQL API to enable both queries and mutations.
+          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
+          - Upholding code quality and adhering to coding standards.
+          - Thoroughly testing and debugging.
+          - Screening and interviewing candidates for frontend development roles.
+          - Provide guidance and support to junior team members wherever needed.
           `,
           startDate: '2022-04-01',
-          endDate: undefined,
-          skills: []
+          endDate: undefined
         },
         {
-          id: 1,
+          id: 'clsa-se',
           title: 'Software Engineer',
           responsibilities: `
-          - Lead front-end development.
-          - Mentor junior developers.
-          - Ensure code quality and standards.
-          - Optimize website performance.
-          - Stay updated on front-end technologies.
-          - Solve complex technical challenges.
+          - Designing, developing, and maintaining the visual and interactive elements of web applications.
+          - Integrating GraphQL API to enable both queries and mutations.
+          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
+          - Upholding code quality and adhering to coding standards.
+          - Thoroughly testing and debugging.
+          - Assisting the business team in tracking user engagement on the website and campaigns.
+          - Helping the business handle technical aspects related to social media handles.
           `,
           startDate: '2019-09-30',
-          endDate: '2022-03-30',
-          skills: []
+          endDate: '2022-03-30'
         }
       ],
       projects: [
         {
-          id: 2,
+          id: 'clsa-forums',
           title: 'CITIC CLSA Forums Web App',
           url: '',
           details: '',
@@ -88,8 +87,8 @@ export const getExperience = cache(async () => {
           skills: []
         },
         {
-          id: 1,
-          title: 'CITIC CLSA Corporate Website',
+          id: 'clsa-corp',
+          title: 'CLSA Corporate Website',
           url: '',
           details: '',
           rolesResponsibilities: '',
@@ -100,7 +99,7 @@ export const getExperience = cache(async () => {
       ]
     },
     {
-      id: 1,
+      id: 'tekdi',
       name: 'Tekdi Technologies Pvt Ltd',
       logo: '/images/icon-tekdi.jpeg',
       url: 'https://www.tekdi.net',
@@ -110,48 +109,44 @@ export const getExperience = cache(async () => {
       endDate: '2019-09-20',
       roles: [
         {
-          id: 2,
-          title: 'Senior Software Developer',
+          id: 'tekdi-ssd',
+          title: 'Senior Frontend Developer',
           responsibilities: `
-          - **UI Leadership & Innovation:**
-            - Led UI development, fostering innovation through R&D.
-            - Created POCs and set development standards.
-            - Conducted code reviews and mentored team.
-
-          - **Technical Solutions Expertise:**
-            - Analyzed project needs for optimal solutions.
-            - Guided teams with tech stack knowledge.
-
-          - **Client Engagement:**
-            - Key client contact for transparent communication.
-            - Provided regular updates, ensuring satisfaction.
-
-          - **Strategic Planning & Resources:**
-            - Developed project roadmaps and managed resources efficiently.
+          - Led UI development, fostering innovation through R&D & POCs.
+          - Set development standards and created SOPs.
+          - Conducted code reviews and mentored the team.
+          - Guided teams with tech stack knowledge.
+          - Analyzed project needs for optimal solutions.
+          - Key client contact for transparent communication.
+          - Developed project roadmaps and managed resources efficiently.
+          - Provided regular updates, ensuring satisfaction.
+          - Screening and interviewing candidates for frontend development roles.
+          - Designing, developing, and maintaining the visual and interactive elements of web applications.
+          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
+          - Upholding code quality and adhering to coding standards.
+          - Thoroughly testing and debugging.
           `,
           startDate: '2017-05-01',
-          endDate: '2019-09-20',
-          skills: []
+          endDate: '2019-09-20'
         },
         {
-          id: 1,
+          id: 'tekdi-webmaster',
           title: 'Webmaster',
           responsibilities: `
-          - Lead front-end development.
-          - Mentor junior developers.
-          - Ensure code quality and standards.
-          - Optimize website performance.
-          - Stay updated on front-end technologies.
-          - Solve complex technical challenges.
+          - Designing, developing, and maintaining the visual and interactive elements of web applications.
+          - Ensuring website responsiveness, cross-browser compatibility, and performance optimization.
+          - Thoroughly testing and debugging.
+          - Analyzed project needs for optimal solutions.
+          - Key client contact for transparent communication.
+          - Provided regular updates, ensuring satisfaction.
           `,
           startDate: '2015-01-21',
-          endDate: '2017-05-01',
-          skills: []
+          endDate: '2017-05-01'
         }
       ],
       projects: [
         {
-          id: 2,
+          id: 'tekdi-dikhsa',
           title: 'DIKSHA',
           url: 'https://diksha.gov.in/',
           details: `
@@ -162,20 +157,67 @@ export const getExperience = cache(async () => {
           - Performance
           `,
           rolesResponsibilities: `
-          - **Leadership in UI Development and Innovation:**
-            - Spearheaded UI development efforts, driving innovation through research and development (R&D)
-            - Successfully created Proof of Concepts (POCs) and established standard development guidelines for enhanced productivity and quality assurance.
-            - Conducted regular code reviews to maintain codebase integrity and mentored team members to foster growth and cohesion.
-          - **Technical Solution Expertise:**
-            - Proficiently analyzed project requirements to formulate optimal technical solutions, ensuring alignment with client objectives and project goals.
-            - Leveraged in-depth understanding of technology stacks to guide project teams toward efficient development processes.
-          - **Effective Client Engagement**
-            - Acted as a primary point of contact with clients for requirement gathering, fostering transparent communication channels.
-            - Provided regular progress updates to clients, ensuring their expectations were met and enhancing overall project satisfaction.
-          - **Strategic Planning and Resource Management:**
-            - Developed comprehensive project roadmaps, meticulously planning project milestones and deliveries
-            - Skillfully allocated resources to optimize team performance, aligning assignments with individual strengths and project demands.
           `,
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-sunbird',
+          title: 'Sunbird',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-sunbird-docs',
+          title: 'Sunbird Documentation Portal',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-climathon',
+          title: 'Climathon',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-climate-kic-learning',
+          title: 'Climate-KIC Learning Portal',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-pip',
+          title: 'Climate-KIC Pioneers into Practice',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
+          startDate: '2019-09-30',
+          endDate: '2022-03-30',
+          skills: []
+        },
+        {
+          id: 'tekdi-tjbase',
+          title: 'Tjbase template for Joomla',
+          url: '',
+          details: '',
+          rolesResponsibilities: '',
           startDate: '2019-09-30',
           endDate: '2022-03-30',
           skills: []

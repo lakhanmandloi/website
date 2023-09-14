@@ -9,7 +9,7 @@ export default async function Experience() {
   const experiences = await getExperience();
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-100 pb-2 text-lg font-semibold print:border-b">
+      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:border-b print:text-sm">
         Experience
       </h3>
       {experiences.map((company) => {
@@ -36,9 +36,9 @@ export default async function Experience() {
             </div>
             <div className="w-full space-y-5">
               <div>
-                <h4 className="text-md font-medium">{company.name}</h4>
-                <div className="flex w-full items-center text-sm text-gray-400 dark:text-gray-500">
-                  <div className="mr-4 flex items-center">
+                <h4 className="text-base font-medium">{company.name}</h4>
+                <div className="flex w-full items-center gap-4 text-sm text-gray-400 dark:text-gray-500">
+                  <div className="flex items-center">
                     <CalendarIcon className="mr-1 w-4" />
                     <time>{duration(company.startDate, company.endDate)}</time>
                   </div>
@@ -46,7 +46,7 @@ export default async function Experience() {
                     <MapPinIcon className="mr-1 w-4" />
                     <span>{company.location}</span>
                   </div>
-                  <div className="ml-auto rounded-md bg-violet-100 p-1 text-xs  text-violet-900">
+                  <div className="rounded-md bg-violet-100 p-1  text-xs text-violet-900">
                     {company.type}
                   </div>
                 </div>
@@ -69,7 +69,7 @@ export default async function Experience() {
                         <CalendarIcon className="mr-1 w-4" />
                         {duration(role.startDate, role.endDate)}
                       </time>
-                      <div className="prose prose-sm text-gray-500 dark:prose-invert">
+                      <div className="prose prose-sm max-w-none text-gray-500 dark:prose-invert">
                         <h5 className="text-md mt-2 font-medium">
                           Responsibilities:
                         </h5>

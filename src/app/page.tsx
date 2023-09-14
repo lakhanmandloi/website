@@ -9,17 +9,14 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="mx-auto grid max-w-5xl gap-5 lg:grid-cols-3">
-        <article className="space-y-5 lg:col-span-2">
+      <main className="mx-auto  max-w-5xl  print:px-8 print:pt-0 ">
+        <article className="space-y-5">
           <AboutMe />
+          <Skills />
           <Experience />
           <Projects />
           <Education />
         </article>
-        <div className="space-y-5">
-          <BasicInfo />
-          <Skills />
-        </div>
       </main>
     </>
   );

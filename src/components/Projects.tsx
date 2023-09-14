@@ -29,7 +29,7 @@ export default async function Projects() {
                     <CalendarIcon className="mr-1 w-4" />
                     <time>{duration(project.startDate, project.endDate)}</time>
                   </div>
-                  <div className="prose prose-sm text-gray-500 dark:prose-invert">
+                  <div className="prose prose-sm max-w-none text-gray-500 dark:prose-invert">
                     <MDXRemote source={project.details} />
                     {project.rolesResponsibilities && (
                       <>

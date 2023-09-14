@@ -2,6 +2,7 @@ import {
   SiAmazonec2,
   SiAmazonrds,
   SiAmazons3,
+  SiAngular,
   SiApollographql,
   SiArchlinux,
   SiBootstrap,
@@ -21,447 +22,555 @@ import {
   SiJenkins,
   SiJira,
   SiJoomla,
+  SiJquery,
   SiLinux,
+  SiMui,
   SiMysql,
   SiNextdotjs,
   SiNginx,
+  SiPhoenixframework,
   SiPhp,
   SiPlaywright,
+  SiPostgresql,
+  SiPrisma,
   SiReact,
   SiReacthookform,
   SiReactquery,
-  SiReactrouter,
+  SiSass,
+  SiSemanticuireact,
+  SiStyledcomponents,
   SiTailwindcss,
   SiTypescript,
+  SiVercel,
   SiWordpress
 } from '@icons-pack/react-simple-icons';
 
-import { WrenchScrewdriverIcon } from '@heroicons/react/24/outline';
-
-const size = 20;
+const size = 14;
+interface Stack {
+  name:
+    | 'Frontend Development'
+    | 'Backend Development'
+    | 'CMS Development'
+    | 'Static Site Generation'
+    | 'DevOps'
+    | 'Testing'
+    | 'Other'
+    | 'Currently Learning';
+  skills: Skill[];
+  hide?: boolean;
+  order?: number;
+}
 interface Skill {
   icon: any;
   name: string;
   tooltip?: string;
-  category: 'frontend' | 'backend' | 'cms' | 'devops' | 'other';
+  hide?: boolean;
+  order?: number;
 }
 
-const skills: Skill[] = [
+const stacks: Stack[] = [
   {
-    icon: (
-      <SiReact
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'React',
-    category: 'frontend'
+    name: 'Frontend Development',
+    skills: [
+      {
+        icon: (
+          <SiReact
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'React'
+      },
+      {
+        icon: (
+          <SiNextdotjs
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Next.js'
+      },
+      {
+        icon: (
+          <SiTailwindcss
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Tailwind CSS'
+      },
+      {
+        icon: (
+          <SiStyledcomponents
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Styled Components',
+        hide: true
+      },
+      {
+        icon: (
+          <SiTypescript
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'TypeScript'
+      },
+      {
+        icon: (
+          <SiJavascript
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'JavaScript'
+      },
+      {
+        icon: (
+          <SiCss3
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'CSS'
+      },
+      {
+        icon: (
+          <SiHtml5
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'HTML'
+      },
+      {
+        icon: (
+          <SiGraphql
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'GraphQL'
+      },
+      {
+        icon: (
+          <SiReactquery
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Tanstack Query',
+        tooltip: 'Tanstack Query (FKA React Query)',
+        hide: true
+      },
+      {
+        icon: (
+          <SiApollographql
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Apollo Client',
+        hide: true
+      },
+      {
+        icon: (
+          <SiReacthookform
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'React Hook Form',
+        hide: true
+      },
+      {
+        icon: (
+          <SiAngular
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Angular',
+        hide: true
+      },
+      {
+        icon: (
+          <SiJquery
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'jQuery',
+        hide: true
+      },
+      {
+        icon: (
+          <SiBootstrap
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Bootstrap',
+        hide: true
+      },
+      {
+        icon: (
+          <SiMui
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Material UI',
+        hide: true
+      },
+      {
+        icon: (
+          <SiSemanticuireact
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Semantic UI',
+        hide: true
+      },
+      {
+        icon: (
+          <SiSass
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'SASS',
+        hide: true
+      }
+    ]
   },
   {
-    icon: (
-      <SiNextdotjs
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Next.js',
-    category: 'frontend'
+    name: 'Backend Development',
+    hide: true,
+    skills: [
+      {
+        icon: (
+          <SiPhp
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'PHP'
+      },
+      {
+        icon: (
+          <SiPostgresql
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Postgresql'
+      },
+      {
+        icon: (
+          <SiMysql
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'MySQL'
+      }
+    ]
   },
   {
-    icon: (
-      <SiTypescript
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'TypeScript',
-    category: 'frontend'
-  },
-
-  {
-    icon: (
-      <SiJavascript
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'JavaScript',
-    category: 'frontend'
-  },
-  {
-    icon: (
-      <SiCss3
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'CSS',
-    category: 'frontend'
+    name: 'CMS Development',
+    skills: [
+      {
+        icon: (
+          <SiJoomla
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Joomla'
+      },
+      {
+        icon: (
+          <SiWordpress
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Wordpress'
+      }
+    ]
   },
   {
-    icon: (
-      <SiHtml5
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'HTML',
-    category: 'frontend'
-  },
-
-  {
-    icon: (
-      <SiTailwindcss
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Tailwind CSS',
-    category: 'frontend'
+    name: 'Static Site Generation',
+    hide: true,
+    skills: [
+      {
+        icon: (
+          <SiJekyll
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Jekyll'
+      }
+    ]
   },
   {
-    icon: (
-      <SiBootstrap
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Bootstrap',
-    category: 'frontend'
+    name: 'Testing',
+    hide: true,
+    skills: [
+      {
+        icon: (
+          <SiPlaywright
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Playwright'
+      }
+    ]
   },
   {
-    icon: (
-      <SiGraphql
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'GraphQL',
-    category: 'frontend'
+    name: 'DevOps',
+    skills: [
+      {
+        icon: (
+          <SiDocker
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Docker'
+      },
+      {
+        icon: (
+          <SiGit
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Git'
+      },
+      {
+        icon: (
+          <SiNginx
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Nginx'
+      },
+      {
+        icon: (
+          <SiGithubactions
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Github Actions'
+      },
+      {
+        icon: (
+          <SiJenkins
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Jenkins',
+        hide: true
+      },
+      {
+        icon: (
+          <SiCircleci
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Circle CI',
+        hide: true
+      },
+      {
+        icon: (
+          <SiVercel
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Vercel',
+        hide: true
+      },
+      {
+        icon: (
+          <SiAmazonec2
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'AWS EC2',
+        hide: true
+      },
+      {
+        icon: (
+          <SiAmazons3
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'AWS S3',
+        hide: true
+      },
+      {
+        icon: (
+          <SiAmazonrds
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'AWS RDS',
+        hide: true
+      },
+      {
+        icon: (
+          <SiGnubash
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Shell Scripting',
+        hide: true
+      },
+      {
+        icon: (
+          <SiLinux
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Linux',
+        hide: true
+      },
+      {
+        icon: (
+          <SiArchlinux
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Arch Linux',
+        hide: true
+      }
+    ]
   },
   {
-    icon: (
-      <SiReactquery
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Tanstack Query',
-    tooltip: 'Tanstack Query (FKA React Query)',
-    category: 'frontend'
+    name: 'Other',
+    hide: true,
+    skills: [
+      {
+        icon: (
+          <SiJira
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'JIRA'
+      },
+      {
+        icon: (
+          <SiFigma
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Figma'
+      }
+    ]
   },
   {
-    icon: (
-      <SiApollographql
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Apollo Client',
-    category: 'frontend'
-  },
-  {
-    icon: (
-      <SiReacthookform
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'React Hook Form',
-    category: 'frontend'
-  },
-  {
-    icon: (
-      <SiReactrouter
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'React Router',
-    category: 'frontend'
-  },
-  {
-    icon: (
-      <SiPlaywright
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Playwright',
-    category: 'other'
-  },
-  {
-    icon: (
-      <SiPhp
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'PHP',
-    category: 'backend'
-  },
-  {
-    icon: (
-      <SiMysql
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'MySQL',
-    category: 'backend'
-  },
-  {
-    icon: (
-      <SiJoomla
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Joomla',
-    category: 'cms'
-  },
-  {
-    icon: (
-      <SiWordpress
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Wordpress',
-    category: 'cms'
-  },
-  {
-    icon: (
-      <SiJekyll
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Jekyll',
-    category: 'other'
-  },
-  {
-    icon: (
-      <SiDocker
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Docker',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiGithubactions
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Github Actions',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiJenkins
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Jenkins',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiCircleci
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Circle CI',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiGit
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Git',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiNginx
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Nginx',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiLinux
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Linux',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiArchlinux
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Arch Linux',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiGnubash
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Shell Scripting',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiAmazonec2
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'AWS EC2',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiAmazons3
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'AWS S3',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiAmazonrds
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'AWS RDS',
-    category: 'devops'
-  },
-  {
-    icon: (
-      <SiJira
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'JIRA',
-    category: 'other'
-  },
-  {
-    icon: (
-      <SiFigma
-        color="default"
-        size={size}
-      />
-    ),
-    name: 'Figma',
-    category: 'other'
+    name: 'Currently Learning',
+    hide: true,
+    skills: [
+      {
+        icon: (
+          <SiBun
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Bun'
+      },
+      {
+        icon: (
+          <SiPrisma
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Prisma'
+      },
+      {
+        icon: (
+          <SiElixir
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Elixir'
+      },
+      {
+        icon: (
+          <SiPhoenixframework
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Phoenix Framework'
+      }
+    ]
   }
 ];
+
 const SkillTag = ({ skill }: { skill: Skill }) => {
   return (
     <span
-      className="flex cursor-pointer items-center rounded-md bg-violet-100 p-1.5 transition-colors duration-300 ease-in-out hover:bg-violet-300"
+      className="flex cursor-pointer items-center rounded-full bg-violet-50 px-2 py-1 text-sm transition-colors duration-300 ease-in-out hover:bg-violet-200 print:text-xs"
       title={skill.tooltip ?? skill.name}
     >
       <span className="mr-2">{skill.icon}</span>
-      <span className="text-sm font-semibold text-violet-900">
-        {skill.name}
-      </span>
+      <span className="text-gray-600">{skill.name}</span>
     </span>
   );
 };
 export default function Skills() {
   return (
-    <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none ">
-      <h3 className="mb-6 border-b-2 border-gray-100 pb-2 text-lg font-semibold">
+    <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
+      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:border-b print:text-sm">
         Skills
       </h3>
-      <h4 className="mb-3 font-semibold">Frontend</h4>
-      <div className="flex flex-wrap gap-2">
-        {skills
-          .filter((x) => x.category === 'frontend')
-          .map((skill) => {
+      <div className="skillslist">
+        {stacks
+          .filter((x) => x?.hide !== true)
+          .map((stack) => {
             return (
-              <SkillTag
-                skill={skill}
-                key={skill.name}
-              />
-            );
-          })}
-      </div>
-      <h4 className="mb-3 mt-6 font-semibold">Backend</h4>
-      <div className="flex flex-wrap gap-2">
-        {skills
-          .filter((x) => x.category === 'backend')
-          .map((skill) => {
-            return (
-              <SkillTag
-                skill={skill}
-                key={skill.name}
-              />
-            );
-          })}
-      </div>
-      <h4 className="mb-3 mt-6 font-semibold">CMS</h4>
-      <div className="flex flex-wrap gap-2">
-        {skills
-          .filter((x) => x.category === 'cms')
-          .map((skill) => {
-            return (
-              <SkillTag
-                skill={skill}
-                key={skill.name}
-              />
-            );
-          })}
-      </div>
-      <h4 className="mb-3 mt-6 font-semibold">DevOps</h4>
-      <div className="flex flex-wrap gap-2">
-        {skills
-          .filter((x) => x.category === 'devops')
-          .map((skill) => {
-            return (
-              <SkillTag
-                skill={skill}
-                key={skill.name}
-              />
-            );
-          })}
-      </div>
-      <h4 className="mb-3 mt-6 font-semibold">Other</h4>
-      <div className="flex flex-wrap gap-2">
-        {skills
-          .filter((x) => x.category === 'other')
-          .map((skill) => {
-            return (
-              <SkillTag
-                skill={skill}
-                key={skill.name}
-              />
+              <>
+                <h4 className="mb-2 text-sm font-medium print:text-xs">
+                  {stack.name}
+                </h4>
+                <div className="mb-4 flex flex-wrap gap-2.5">
+                  {stack.skills
+                    .filter((x) => x?.hide !== true)
+                    .map((skill) => {
+                      return (
+                        <SkillTag
+                          skill={skill}
+                          key={skill.name}
+                        />
+                      );
+                    })}
+                </div>
+              </>
             );
           })}
       </div>
