@@ -2,17 +2,6 @@ import { cache } from 'react';
 
 export const revalidate = 3600;
 
-export interface Project {
-  id: string;
-  title: string;
-  url: string;
-  details: string;
-  rolesResponsibilities: string;
-  startDate: string;
-  endDate?: string;
-  skills?: string[];
-  assets?: string[];
-}
 export interface Company {
   id: string;
   name: string;
@@ -30,6 +19,22 @@ export interface Company {
     endDate?: string;
   }[];
   projects: Project[];
+  hide?: boolean;
+}
+export interface Project {
+  id: string;
+  title: string;
+  url: string;
+  github?: string;
+  details: string;
+  rolesResponsibilities: string;
+  keyAchievements?: string;
+  startDate: string;
+  endDate?: string;
+  skills: string[];
+  companyId?: string;
+  companyName?: string;
+  hide?: boolean;
 }
 
 export const getExperience = cache(async () => {
@@ -48,13 +53,10 @@ export const getExperience = cache(async () => {
           id: 'clsa-sse',
           title: 'Senior Software Engineer',
           responsibilities: `
-          - Designing, developing, and maintaining the visual and interactive elements of web applications.
-          - Integrating GraphQL API to enable both queries and mutations.
-          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
-          - Upholding code quality and adhering to coding standards.
-          - Thoroughly testing and debugging.
-          - Screening and interviewing candidates for frontend development roles.
+          - Design and development of visual elements of web app, GraphQL API integration, and thoroughly testing and debugging the system.
+          - Ensure website responsiveness, cross-browser compatibility, security, and performance optimization, and uphold the code quality while adhering to the coding standards.
           - Provide guidance and support to junior team members wherever needed.
+          - Screening and interviewing candidates for frontend development roles.
           `,
           startDate: '2022-04-01',
           endDate: undefined
@@ -63,13 +65,9 @@ export const getExperience = cache(async () => {
           id: 'clsa-se',
           title: 'Software Engineer',
           responsibilities: `
-          - Designing, developing, and maintaining the visual and interactive elements of web applications.
-          - Integrating GraphQL API to enable both queries and mutations.
-          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
-          - Upholding code quality and adhering to coding standards.
-          - Thoroughly testing and debugging.
-          - Assisting the business team in tracking user engagement on the website and campaigns.
-          - Helping the business handle technical aspects related to social media handles.
+          - Design and development of visual elements of web app, GraphQL API integration, and thoroughly testing and debugging the system.
+          - Ensure website responsiveness, cross-browser compatibility, security, and performance optimization, and uphold the code quality while adhering to the coding standards.
+          - Assist the business team in tracking user engagement on the website and campaigns and help them with technical aspects related to social media handles.
           `,
           startDate: '2019-09-30',
           endDate: '2022-03-30'
@@ -79,22 +77,37 @@ export const getExperience = cache(async () => {
         {
           id: 'clsa-forums',
           title: 'CITIC CLSA Forums Web App',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
+          url: 'https://forums.clsa.com/',
+          details: `
+          CLSA Forums: Premier Asia events in Hong Kong, Tokyo, Singapore, and Mumbai. Connects global leaders, industry specialists, and investors to explore market trends and engage with top executives from leading Asian and US companies. The Forum portal is central hub for investor and corporate registration, event details, and CLSA forum management
+          `,
+          rolesResponsibilities: `
+          - Design and development of visual elements of web app, GraphQL API integration, and thoroughly testing and debugging the system.
+          - Ensure website responsiveness, cross-browser compatibility, security, and performance optimization, and uphold the code quality while adhering to the coding standards.
+          `,
           startDate: '2020-05-05',
           endDate: undefined,
-          skills: []
+          skills: ['React', 'GraphQL', 'Docker', 'Git', 'Github Actions']
         },
         {
           id: 'clsa-corp',
           title: 'CLSA Corporate Website',
-          url: '',
-          details: '',
-          rolesResponsibilities: '',
+          url: 'https://www.clsa.com/',
+          details: 'Corporate website of CLSA.',
+          rolesResponsibilities: `
+          - Administer the website, with a focus on meeting both business needs and security standards.
+          - Assist the business team in tracking user engagement on the website and campaigns and help them with technical aspects related to social media handles.`,
           startDate: '2019-09-30',
           endDate: '2022-09-30',
-          skills: []
+          skills: [
+            'WordPress',
+            'HTML',
+            'CSS',
+            'JavaScript',
+            'jQuery',
+            'Docker',
+            'Git'
+          ]
         }
       ]
     },
@@ -112,19 +125,10 @@ export const getExperience = cache(async () => {
           id: 'tekdi-ssd',
           title: 'Senior Frontend Developer',
           responsibilities: `
-          - Led UI development, fostering innovation through R&D & POCs.
-          - Set development standards and created SOPs.
-          - Conducted code reviews and mentored the team.
-          - Guided teams with tech stack knowledge.
-          - Analyzed project needs for optimal solutions.
-          - Key client contact for transparent communication.
-          - Developed project roadmaps and managed resources efficiently.
-          - Provided regular updates, ensuring satisfaction.
+          - Led a UI development team both within the company and across multiple companies, promoting innovation through R&D and proof-of-concept (POC) projects. Established development standards, crafted standard operating procedures (SOPs), conducted thorough code reviews, and provided mentorship to the team, while also offering guidance on expanding tech stack knowledge.
+          - As the primary client contact, I assessed project requirements, devised effective solutions, created project roadmaps, optimized resource allocation, and maintained transparent communication with regular updates to ensure client satisfaction.
+          - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           - Screening and interviewing candidates for frontend development roles.
-          - Designing, developing, and maintaining the visual and interactive elements of web applications.
-          - Ensuring website responsiveness, cross-browser compatibility, security, and performance optimization.
-          - Upholding code quality and adhering to coding standards.
-          - Thoroughly testing and debugging.
           `,
           startDate: '2017-05-01',
           endDate: '2019-09-20'
@@ -133,12 +137,8 @@ export const getExperience = cache(async () => {
           id: 'tekdi-webmaster',
           title: 'Webmaster',
           responsibilities: `
-          - Designing, developing, and maintaining the visual and interactive elements of web applications.
-          - Ensuring website responsiveness, cross-browser compatibility, and performance optimization.
-          - Thoroughly testing and debugging.
-          - Analyzed project needs for optimal solutions.
-          - Key client contact for transparent communication.
-          - Provided regular updates, ensuring satisfaction.
+          - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
+          - In numerous projects, I served as the main point of contact for clients, where I evaluated project requirements, formulated efficient solutions, developed project roadmaps, and upheld transparent communication by providing regular updates to ensure client contentment.
           `,
           startDate: '2015-01-21',
           endDate: '2017-05-01'
@@ -146,46 +146,59 @@ export const getExperience = cache(async () => {
       ],
       projects: [
         {
+          id: 'tekdi-sunbird',
+          title: 'Sunbird',
+          url: 'https://diksha.gov.in/explore',
+          github: 'https://github.com/Sunbird-Ed/SunbirdEd-portal',
+          details: `Sunbird is an open source learning management platform developed by EkStep Foundation. EkStep Foundation is a not for profit foundation registered in India and co-founded by Nandan Nilekani.`,
+          rolesResponsibilities: `
+          - Led UI development team comprised of individuals from different companies, promoting innovation through R&D and proof-of-concept (POC) projects. Established development standards, crafted standard operating procedures (SOPs), conducted thorough code reviews, and provided mentorship to the team, while also offering guidance on expanding tech stack knowledge.
+          - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
+          `,
+          keyAchievements: `
+          - Designed a unique multilingual UI, fulfilling project specific requirements. Read about the implementation blog at [https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha](https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha).
+          - Implemented Design System available at [https://sunbird-ed.github.io/sunbird-style-guide/dist/#/](https://sunbird-ed.github.io/sunbird-style-guide/dist/#/).
+          `,
+          startDate: '2017-10-05',
+          endDate: '2019-09-20',
+          skills: ['Angular', 'Semantic UI', 'SASS', 'Bourbon', 'Gulp', 'Git']
+        },
+        {
           id: 'tekdi-dikhsa',
           title: 'DIKSHA',
           url: 'https://diksha.gov.in/',
           details: `
-          DIKSHA is a popular Indian government learning website and app that millions of people use. The main challenge was around inclusion and diversity of users, as India has more than 38 languages. Other challenges included slow mobile networks in rural areas.
-          Challenge solutions:
-          - Multilingual UI with a unique and fresh approach to fulfil the requirements. Implementation blog can be found here - https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha & Implementation can be seen here - https://diksha.gov.in/explore
-          - Implemented Design System - https://sunbird-ed.github.io/sunbird-style-guide/dist/#/
-          - Performance
+          DIKSHA: Indian government initiative, digital platform for teachers and students, offers resources like textbooks, courses, and interactive content to improve education accessibility and quality through web and mobile apps. DIKSHA is available in 18 languages and has over 35 million users. DIKSHA is built on top of Sunbird, an open source learning management platform developed by EkStep Foundation.
           `,
           rolesResponsibilities: `
+          - Led UI development team, promoting innovation through R&D and proof-of-concept (POC) projects. Established development standards, crafted standard operating procedures (SOPs), conducted thorough code reviews, and provided mentorship to the team, while also offering guidance on expanding tech stack knowledge.
+          - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           startDate: '2017-08-25',
           endDate: '2019-09-20',
-          skills: []
-        },
-        {
-          id: 'tekdi-sunbird',
-          title: 'Sunbird',
-          url: 'https://github.com/Sunbird-Ed/SunbirdEd-portal',
-          details: `Sunbird is an open source learning management platform developed by EkStep Foundation. EkStep Foundation is a not for profit foundation registered in India and co-founded by Nandan Nilekani.`,
-          rolesResponsibilities: `
-          - UI development, do estimations & planning and help the team whenever required.
-          - Do R&D, prepare POC & standard guidelines
-          `,
-          startDate: '2018-06-10',
-          endDate: '2019-09-20',
-          skills: ['SASS', 'Bourbon', 'Semantic UI', 'Angular']
+          skills: [
+            'Jekyll',
+            'Docker',
+            'CircleCI',
+            'Nginx',
+            'Shell scripting',
+            'ReDoc'
+          ]
         },
         {
           id: 'tekdi-sunbird-docs',
           title: 'Sunbird Documentation Portal',
           url: 'https://sunbird.org/',
-          details: ` A multi-version documentation website for Project Sunbird. A unique docs contribution build pipeline is quite interesting & is quite lengthy to write in here.`,
+          github: 'https://github.com/project-sunbird/sunbird.org-docs',
+          details: `A multi-version documentation website for open source learning management platform Sunbird.`,
           rolesResponsibilities: `
-          - Full stack development - DevOps, UI and Jekyll plugin development
-          - Do estimations & planning and help the team whenever required.
+          - Full stack development - DevOps, Frontend and Jekyll plugin development
+          - Do estimations, planning and help the team whenever required.
           - Do R&D and prepare POC.
           `,
-          startDate: '2017-08-15',
+          keyAchievements: `
+          - Established a novel and efficient documentation contribution build pipeline to promote open-source contributions.`,
+          startDate: '2017-05-15',
           endDate: '2019-09-20',
           skills: [
             'Jekyll',
@@ -198,20 +211,30 @@ export const getExperience = cache(async () => {
         },
         {
           id: 'tekdi-artificiers',
-          title: 'Artificiers Library',
+          title: 'Artificiers CSS Library',
           url: 'https://github.com/lakhanmandloi/artificers',
-          details: `A CSS Utlility library.`,
-          rolesResponsibilities: '',
-          startDate: '2017-05-15',
+          details: `It is a utility-first CSS library that followed a similar approach to Tailwind CSS, built when Tailwind CSS didn't existed.`,
+          rolesResponsibilities: `
+          - Product Owner and Technical Lead
+          `,
+          keyAchievements: `
+          - Recognizing its capabilities, it gained widespread adoption at the company level and became a staple in numerous products & projects.
+          - It also played a significant role in facilitating the smooth migration of Joomla components from Bootstrap 3 to Bootstrap 4.`,
+          startDate: '2016-04-15',
           endDate: '2019-09-20',
-          skills: ['Product Owner', 'Technical Lead', 'SCSS', 'CSS']
+          skills: ['SCSS', 'CSS', 'Gulp']
         },
         {
           id: 'tekdi-tjbase',
-          title: 'Tjbase template for Joomla',
+          title: 'Tjbase Joomla Template',
           url: '',
-          details: `An ultra lightweight template for Joomla CMS. Focused mainly on Performance optimisation, SEO, automation and Code reusability. Used on a website with traffic of 2 million visits per day.`,
-          rolesResponsibilities: '',
+          details: `A no-bloat, ultra-lightweight Joomla CMS template with a minimalistic design, prioritizing performance optimization, SEO enhancements, and code reusability.`,
+          rolesResponsibilities: `
+          - Product Owner and Technical Lead
+          `,
+          keyAchievements: `
+          - Acknowledging its outstanding performance, it was utilized in UIDAI's Aadhaar website, a high-traffic platform.
+          - Its remarkable capabilities led to widespread adoption within the company, making it an indispensable component in numerous projects.`,
           startDate: '2016-04-15',
           endDate: '2019-09-20',
           skills: [
@@ -221,34 +244,9 @@ export const getExperience = cache(async () => {
             'PHP',
             'HTML',
             'SCSS',
-            'CSS',
             'JavaScript',
             'jQuery',
-            'Git',
-            'Bootstrap'
-          ]
-        },
-        {
-          id: 'tekdi-cp',
-          title: 'EIT Climate-KIC : Certified Professionals',
-          url: '',
-          details: `Certified Professionals is a platform for the EIT Climate-KIC Alumni to showcase their skills and expertise to the world.`,
-          rolesResponsibilities: `
-          - Designing, developing, and maintaining the visual and interactive elements of web application.
-          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
-          startDate: '2016-06-07',
-          endDate: '2017-08-30',
-          skills: [
-            'Technical Lead',
-            'Joomla',
-            'PHP',
-            'HTML',
-            'SCSS',
-            'CSS',
-            'JavaScript',
-            'jQuery',
-            'Git',
-            'Bootstrap'
+            'Gulp'
           ]
         },
         {
@@ -257,8 +255,7 @@ export const getExperience = cache(async () => {
           url: 'https://pioneers.climate-kic.org/',
           details: `Pioneers into Practice is a professional mobility programme for climate change professionals. It is a learning journey that takes place in different European countries.`,
           rolesResponsibilities: `
-          - Designing, developing, and maintaining the visual and interactive elements of web application.
-          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
+          - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.`,
           startDate: '2016-06-07',
           endDate: '2017-08-30',
           skills: [
@@ -280,11 +277,9 @@ export const getExperience = cache(async () => {
           url: 'https://climathon.climate-kic.org/',
           details: `Climathon is an annual global event that brings together the challenges of the world's cities with people who have the passion and ability to solve them.`,
           rolesResponsibilities: `
-          - Understand the project requirement from the client, analyse it and mould it into a technical requirements with the best possible solution.
-          - Plan the roadmap, deliveries and resource allocation.
-          - Client communication for requirement gathering and progress updates.
-          - Designing, developing, and maintaining the visual and interactive elements of web application.
-          - Support & analyse the technical issue the client or end-user raised and take appropriate action.`,
+          - As the primary client contact, I assessed project requirements, devised effective solutions, created project roadmaps, optimized resource allocation, and maintained transparent communication with regular updates to ensure client satisfaction.
+          - Design, develop, and rigorously test website while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
+          `,
           startDate: '2016-06-07',
           endDate: '2017-08-30',
           skills: [
@@ -305,14 +300,12 @@ export const getExperience = cache(async () => {
           id: 'tekdi-climate-kic-learning',
           title: 'EIT Climate-KIC : Learning Portal',
           url: 'https://learning.climate-kic.org/',
-          details: `EIT Climate-KIC is Europe’s largest public-private innovation partnership focused on climate innovation to mitigate and adapt to climate change.`,
+          details: `EIT Climate-KIC is a European knowledge and innovation community focused on addressing climate change challenges. It aims to drive innovation, support startups, and promote sustainable solutions to mitigate and adapt to climate change. Learning Portal is a platform for EIT Climate-KIC's learning and development programmes.
+          `,
           rolesResponsibilities: `
-          - Understand the project requirement from the client, analyse it and mould it into a technical requirements with the best possible solution.
-          - Plan the roadmap, deliveries and resource allocation.
-          - Client communication for requirement gathering and progress updates.
-          - Designing, developing, and maintaining the visual and interactive elements of web application.
-          - Support & analyse the technical issue the client or end-user raised and take appropriate action.
-          - *Scrum master and technical lead for the project: June 2016 onwards*.`,
+          - Served as Scrum Master and Technical Lead June 2016 till June 2017, I've been the primary client contact, responsible for assessing project requirements, devising effective solutions, creating project roadmaps, optimizing resource allocation, and maintaining transparent communication with regular updates to ensure client satisfaction.
+          - Design, develop, and rigorously test website while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
+          `,
           startDate: '2015-04-15',
           endDate: '2017-08-30',
           skills: [

@@ -16,6 +16,15 @@
   }
 }
 @page {
-  size: auto;
-  margin: 0;
+  size: 'A4';
+  margin: 0.75in 0;
+  page-break-inside: avoid;
 }
+@page :first {
+  margin-top: 0;
+}
+/*@media print {
+  div {
+    break-inside: avoid;
+  }
+}*/

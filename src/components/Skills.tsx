@@ -123,6 +123,7 @@ const stacks: Stack[] = [
           <SiJavascript
             color="default"
             size={size}
+            className="bg-gray-600"
           />
         ),
         name: 'JavaScript'

@@ -1,12 +1,10 @@
-import { start } from 'repl';
-
 export const parseDate = (date: string) => new Date(date);
 export const formatDate = (date?: string) => {
   if (!date) return 'Present';
   const parsedDate = parseDate(date);
   return parsedDate.toLocaleString('en-us', {
     month: 'short',
-    year: 'numeric',
+    year: 'numeric'
   });
 };
 export const formatDuration = (startDate: string, endDate?: string) => {
@@ -14,7 +12,7 @@ export const formatDuration = (startDate: string, endDate?: string) => {
 };
 export const formatCalculatedDuration = (
   startDate: string,
-  endDate?: string,
+  endDate?: string
 ) => {
   const parsedStartDate = parseDate(startDate);
   const parsedEndDate = endDate ? parseDate(endDate) : new Date();
@@ -36,6 +34,6 @@ export const formatCalculatedDuration = (
 export const duration = (startDate: string, endDate?: string) => {
   return `${formatDuration(startDate, endDate)} · ${formatCalculatedDuration(
     startDate,
-    endDate,
+    endDate
   )}`;
 };
