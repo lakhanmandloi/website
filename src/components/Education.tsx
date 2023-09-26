@@ -12,7 +12,7 @@ export default async function Education() {
   const educations = await getEducation();
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-100 pb-2 text-lg font-semibold">
+      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:border-b print:text-sm">
         Education
       </h3>
       <div className="educationlist">
@@ -22,7 +22,7 @@ export default async function Education() {
               className="group mb-5 mt-6 flex"
               key={education.id}
             >
-              <div className="mr-6 pt-2">
+              <div className="mr-6 hidden pt-2 md:block">
                 <Image
                   src={education.logo}
                   alt={education.name}
@@ -34,10 +34,10 @@ export default async function Education() {
               </div>
               <div className="w-full space-y-5">
                 <div>
-                  <h4 className="text-md font-medium">
+                  <h4 className="text-base font-medium print:text-sm">
                     {education.school} ( Affiliated to {education.affiliation} )
                   </h4>
-                  <div className="flex w-full flex-col text-gray-500 dark:text-gray-500">
+                  <div className="flex w-full flex-col text-sm text-gray-500 dark:text-gray-500">
                     <div className="flex items-center">
                       <AcademicCapIcon className="mr-2 w-4 text-gray-400" />
                       <span>{education.name}</span>

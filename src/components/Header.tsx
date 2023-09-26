@@ -76,6 +76,7 @@ export default function Headline() {
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
         href={link.href}
+        target="_blank"
       >
         <span className="mr-2 text-gray-400 print:mr-1">{link.icon}</span>
         <span className="print:hidden">{link.displayText}</span>
@@ -86,10 +87,10 @@ export default function Headline() {
 
   return (
     <header className="mx-auto w-full space-y-5 overflow-hidden rounded-xl bg-white shadow print:rounded-none print:border-b-2 print:shadow-none lg:max-w-5xl">
-      <div className="relative h-28 overflow-visible bg-[url('/images/banner.jpg')] bg-cover bg-fixed print:bg-local md:h-40">
+      <div className="relative h-28 overflow-visible bg-[url('/images/banner-1.jpg')] bg-cover bg-fixed print:bg-local md:h-40">
         <div className="translate-1/2 print:space-between absolute -bottom-10 z-10 flex w-full items-end px-8 print:justify-between">
           <Image
-            src="/images/avatar.png"
+            src="/images/avatar.jpg"
             alt="Lakhan Mandloi"
             className="cursor-pointer rounded-full bg-pink-200 shadow-md"
             width={80}
@@ -99,7 +100,7 @@ export default function Headline() {
       </div>
       <div className="flex flex-col p-6 pt-8 print:p-8 print:pb-4">
         <div className="flex flex-col items-start justify-between md:mb-4 xl:flex-row xl:items-center">
-          <div className="whitespace-nowrap">
+          <div className="whitespace-nowrap1">
             <h1 className="text-2xl font-semibold print:text-lg">
               Lakhan Mandloi
               <span className="ml-2 text-sm font-light print:hidden">
@@ -107,7 +108,7 @@ export default function Headline() {
               </span>
             </h1>
             <div className="mb-3 text-base text-gray-400 print:mb-3 print:text-sm xl:mb-0">
-              Frontend Developer (8+ YoE)
+              Frontend Developer (8+ Years Experience)
             </div>
           </div>
           <div className="flex flex-col items-end justify-between">
@@ -125,8 +126,8 @@ export default function Headline() {
         </div>
         <div className="flex flex-col space-y-4 md:flex-row md:items-center md:justify-between md:space-y-0">
           <address className="flex items-center text-sm text-gray-500 print:text-xs">
-            <MapPinIcon className="mr-2 w-4 text-gray-400" /> Indore, Madhya
-            Pradesh, India
+            <MapPinIcon className="mr-2 w-4 text-gray-400" />
+            Indore, Madhya Pradesh, India
           </address>
           <div className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden">
             <button className="w-full rounded-l-lg px-4 py-2">

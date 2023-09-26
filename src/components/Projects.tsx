@@ -17,13 +17,18 @@ export default async function Projects() {
       }))
     ];
   }, []);
+  const sortedProjects = projects.sort((a, b) => {
+    const dateA = new Date(a.startDate).getTime();
+    const dateB = new Date(b.startDate).getTime();
+    return dateA > dateB ? -1 : dateA < dateB ? 1 : 0;
+  });
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
       <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:border-b print:text-sm">
         Projects
       </h3>
       <div className="projectslist">
-        {projects.map((project) => {
+        {sortedProjects.map((project) => {
           return (
             <div
               className="group mb-5 mt-6 flex"
@@ -32,22 +37,24 @@ export default async function Projects() {
             >
               <div className="w-full space-y-4">
                 <div>
-                  <h4 className="text-base font-medium">{project.title}</h4>
-                  <div className="mt-1 flex flex-col gap-1.5 text-gray-500 dark:text-gray-500 md:flex-row">
-                    <div className="mb-2 flex items-center ">
-                      <CalendarIcon className="mr-2 w-4 text-gray-400" />
+                  <h4 className="text-sm font-medium print:text-xs">
+                    {project.title}
+                  </h4>
+                  <div className="mt-1 flex flex-col gap-1.5 text-sm text-gray-500 dark:text-gray-500 md:flex-row">
+                    <div className="mb-2 flex items-center">
+                      <CalendarIcon className="mr-1 w-4 text-gray-400" />
                       <time>
                         {duration(project.startDate, project.endDate)}
                       </time>
                     </div>
                     <div className="mb-2 flex items-center">
-                      <BriefcaseIcon className="mr-2 w-4 text-gray-400" />
+                      <BriefcaseIcon className="mr-1 w-4 text-gray-400" />
                       <Link href={`#${project.companyId}`}>
                         {project?.companyName}
                       </Link>
                     </div>
                   </div>
-                  <div className="prose prose-sm max-w-none text-gray-400 dark:prose-invert">
+                  <div className="prose prose-sm max-w-none text-gray-500 dark:prose-invert">
                     <MDXRemote source={project.details} />
                     {project.rolesResponsibilities && (
                       <>

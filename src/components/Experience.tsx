@@ -39,8 +39,10 @@ export default async function Experience() {
               </div>
               <div className="w-full space-y-4">
                 <div>
-                  <h4 className="text-base font-medium">{company.name}</h4>
-                  <div className="mt-1 flex w-full flex-col items-start gap-1.5 text-sm text-gray-500 dark:text-gray-500 md:flex-row md:items-center md:gap-4">
+                  <h4 className="text-base font-medium print:text-sm">
+                    {company.name}
+                  </h4>
+                  <div className="mt-1 flex w-full flex-col items-start gap-1.5 text-sm text-gray-500 dark:text-gray-500 print:flex-row md:flex-row md:items-center md:gap-4">
                     <div className="flex items-center">
                       <CalendarIcon className="mr-1 w-4 text-gray-400" />
                       <time>
@@ -51,7 +53,7 @@ export default async function Experience() {
                       <MapPinIcon className="mr-1 w-4 text-gray-400" />
                       <span>{company.location}</span>
                     </div>
-                    <div className="rounded-md bg-violet-100 px-2 py-0.5 text-xs text-violet-900">
+                    <div className="rounded-md bg-violet-100 px-2 py-0.5 text-xs text-violet-500">
                       {company.type}
                     </div>
                   </div>
@@ -67,15 +69,15 @@ export default async function Experience() {
                         key={role.id}
                       >
                         <div className="absolute -left-1.5 mt-1.5 h-3 w-3 rounded-full border border-white bg-gray-200 dark:border-gray-900 dark:bg-gray-700"></div>
-                        <h5 className="text-sm font-semibold text-gray-600 dark:text-white md:text-base">
+                        <h5 className="text-sm font-semibold text-gray-600 dark:text-white print:text-xs">
                           {role.title}
                         </h5>
                         <time className="mb-1 mt-1 flex items-center text-sm font-normal leading-none text-gray-500 dark:text-gray-500">
                           <CalendarIcon className="mr-1 w-4 text-gray-400" />
                           {duration(role.startDate, role.endDate)}
                         </time>
-                        <div className="prose prose-sm max-w-none text-gray-400 dark:prose-invert">
-                          <h5 className="md:text-md mt-4 text-sm font-medium text-gray-500">
+                        <div className="prose prose-sm max-w-none text-gray-500 dark:prose-invert">
+                          <h5 className="mt-4 text-sm font-medium text-gray-500">
                             Responsibilities:
                           </h5>
                           <MDXRemote source={role.responsibilities} />

@@ -44,7 +44,7 @@ export const getExperience = cache(async () => {
       name: 'CLSA Technology & Services LLP',
       logo: '/images/logo-clsa.png',
       url: 'https://www.clsa.com',
-      location: 'Pune, India',
+      location: 'Pune, Maharashtra, India',
       type: 'Full Time',
       startDate: '2019-09-30',
       endDate: undefined,
@@ -116,7 +116,7 @@ export const getExperience = cache(async () => {
       name: 'Tekdi Technologies Pvt Ltd',
       logo: '/images/icon-tekdi.jpeg',
       url: 'https://www.tekdi.net',
-      location: 'Pune, India',
+      location: 'Pune, Maharashtra, India',
       type: 'Full Time',
       startDate: '2015-01-21',
       endDate: '2019-09-20',
@@ -171,10 +171,9 @@ export const getExperience = cache(async () => {
           DIKSHA: Indian government initiative, digital platform for teachers and students, offers resources like textbooks, courses, and interactive content to improve education accessibility and quality through web and mobile apps. DIKSHA is available in 18 languages and has over 35 million users. DIKSHA is built on top of Sunbird, an open source learning management platform developed by EkStep Foundation.
           `,
           rolesResponsibilities: `
-          - Led UI development team, promoting innovation through R&D and proof-of-concept (POC) projects. Established development standards, crafted standard operating procedures (SOPs), conducted thorough code reviews, and provided mentorship to the team, while also offering guidance on expanding tech stack knowledge.
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
-          startDate: '2017-08-25',
+          startDate: '2017-09-01',
           endDate: '2019-09-20',
           skills: [
             'Jekyll',
@@ -220,7 +219,7 @@ export const getExperience = cache(async () => {
           keyAchievements: `
           - Recognizing its capabilities, it gained widespread adoption at the company level and became a staple in numerous products & projects.
           - It also played a significant role in facilitating the smooth migration of Joomla components from Bootstrap 3 to Bootstrap 4.`,
-          startDate: '2016-04-15',
+          startDate: '2017-05-15',
           endDate: '2019-09-20',
           skills: ['SCSS', 'CSS', 'Gulp']
         },
@@ -233,7 +232,7 @@ export const getExperience = cache(async () => {
           - Product Owner and Technical Lead
           `,
           keyAchievements: `
-          - Acknowledging its outstanding performance, it was utilized in UIDAI's Aadhaar website, a high-traffic platform.
+          - It is used in UIDAI's Aadhaar website, a high-traffic platform.
           - Its remarkable capabilities led to widespread adoption within the company, making it an indispensable component in numerous projects.`,
           startDate: '2016-04-15',
           endDate: '2019-09-20',
@@ -303,7 +302,7 @@ export const getExperience = cache(async () => {
           details: `EIT Climate-KIC is a European knowledge and innovation community focused on addressing climate change challenges. It aims to drive innovation, support startups, and promote sustainable solutions to mitigate and adapt to climate change. Learning Portal is a platform for EIT Climate-KIC's learning and development programmes.
           `,
           rolesResponsibilities: `
-          - Served as Scrum Master and Technical Lead June 2016 till June 2017, I've been the primary client contact, responsible for assessing project requirements, devising effective solutions, creating project roadmaps, optimizing resource allocation, and maintaining transparent communication with regular updates to ensure client satisfaction.
+          - Served as Scrum Master and Technical Lead Dec 2016 till Aug 2017, I've been the primary client contact, responsible for assessing project requirements, devising effective solutions, creating project roadmaps, optimizing resource allocation, and maintaining transparent communication with regular updates to ensure client satisfaction.
           - Design, develop, and rigorously test website while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           startDate: '2015-04-15',
