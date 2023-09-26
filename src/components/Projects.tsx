@@ -22,73 +22,101 @@ export default async function Projects() {
     const dateB = new Date(b.startDate).getTime();
     return dateA > dateB ? -1 : dateA < dateB ? 1 : 0;
   });
+  const showDetails = true;
+  const showResponsibilities = true;
+  const showKeyAchievements = true;
+  const showSkills = true;
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:border-b print:text-sm">
+      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Projects
       </h3>
       <div className="projectslist">
         {sortedProjects.map((project) => {
           return (
             <div
-              className="group mb-5 mt-6 flex"
+              className="mb-4 flex border-b border-gray-200 pb-4 last:mb-0 last:border-b-0 print:pb-4 md:mt-6 md:pb-6"
               key={project.id}
               id={project.id}
             >
-              <div className="w-full space-y-4">
+              <div className="w-full space-y-2">
                 <div>
                   <h4 className="text-sm font-medium print:text-xs">
                     {project.title}
                   </h4>
-                  <div className="mt-1 flex flex-col gap-1.5 text-sm text-gray-500 dark:text-gray-500 md:flex-row">
-                    <div className="mb-2 flex items-center">
-                      <CalendarIcon className="mr-1 w-4 text-gray-400" />
+                  <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 print:flex-row md:flex-row md:items-center md:gap-4 md:text-sm">
+                    <div className="flex items-center">
+                      <CalendarIcon className="mr-1 w-4 print:w-3" />
                       <time>
                         {duration(project.startDate, project.endDate)}
                       </time>
                     </div>
-                    <div className="mb-2 flex items-center">
-                      <BriefcaseIcon className="mr-1 w-4 text-gray-400" />
+                    <div className="flex items-center">
+                      <BriefcaseIcon className="mr-1 w-4 print:w-3" />
                       <Link href={`#${project.companyId}`}>
                         {project?.companyName}
                       </Link>
                     </div>
                   </div>
-                  <div className="prose prose-sm max-w-none text-gray-500 dark:prose-invert">
-                    <MDXRemote source={project.details} />
-                    {project.rolesResponsibilities && (
-                      <>
-                        <h5 className="md:text-md mt-4 text-sm font-medium text-gray-500">
-                          Roles & Responsibilities:
-                        </h5>
-                        <MDXRemote source={project.rolesResponsibilities} />
-                      </>
+                  <div className="prose prose-sm mt-2 max-w-none space-y-1.5 text-gray-500 print:space-y-0.5">
+                    {project.details && showDetails && (
+                      <div className="project-details prose prose-sm max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
+                        <MDXRemote source={project.details} />
+                      </div>
                     )}
-                    {project.keyAchievements && (
-                      <>
-                        <h5 className="md:text-md mt-4 text-sm font-medium text-gray-500">
+                    {project.roles?.length > 0 && (
+                      <div className="project-roles flex items-center">
+                        <h5 className="md:text-md mr-1 text-sm font-medium">
+                          Role:
+                        </h5>
+                        <div>
+                          {project.roles.map((role) => {
+                            return <span key={role}>{role}</span>;
+                          })}
+                        </div>
+                      </div>
+                    )}
+                    {project.responsibilities && showResponsibilities && (
+                      <div className="project-responsibilites">
+                        <h5 className="md:text-md text-sm font-medium">
+                          Responsibilities:
+                        </h5>
+                        <div className="prose prose-sm max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
+                          <MDXRemote source={project.responsibilities} />
+                        </div>
+                      </div>
+                    )}
+                    {project.keyAchievements && showKeyAchievements && (
+                      <div className="project-keyAchievements">
+                        <h5 className="md:text-md text-sm font-medium">
                           Key Achievements:
                         </h5>
-                        <MDXRemote source={project.keyAchievements} />
-                      </>
+                        <div className="prose prose-sm max-w-none leading-snug text-gray-500 prose-a:font-normal prose-a:text-gray-500 print:text-sm print:leading-tight">
+                          <MDXRemote source={project.keyAchievements} />
+                        </div>
+                      </div>
+                    )}
+                    {project?.skills?.length > 0 && showSkills && (
+                      <div className="project-skills mt-2 flex">
+                        <h5 className="md:text-md mr-1 text-sm font-medium">
+                          Skills:
+                        </h5>
+                        <div className="flex flex-wrap gap-1.5">
+                          {project?.skills.map((skill) => {
+                            return (
+                              <span
+                                key={skill}
+                                className="inline-block rounded-md bg-gray-100 px-2 py-0.5 text-xs text-gray-500"
+                              >
+                                {skill}
+                              </span>
+                            );
+                          })}
+                        </div>
+                      </div>
                     )}
                   </div>
-                  {project?.skills?.length > 0 && (
-                    <div className="project-skills mt-6 flex flex-wrap gap-1.5">
-                      {project?.skills.map((skill) => {
-                        return (
-                          <span
-                            key={skill}
-                            className="inline-block rounded-md bg-gray-100 px-2 py-0.5 text-xs text-gray-500 dark:bg-gray-700 dark:text-gray-500"
-                          >
-                            {skill}
-                          </span>
-                        );
-                      })}
-                    </div>
-                  )}
                 </div>
-                <div className="border-b border-gray-200 group-last:hidden"></div>
               </div>
             </div>
           );

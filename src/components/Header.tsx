@@ -77,6 +77,7 @@ export default function Headline() {
         title={link.tooltip}
         href={link.href}
         target="_blank"
+        rel="noopener noreferrer"
       >
         <span className="mr-2 text-gray-400 print:mr-1">{link.icon}</span>
         <span className="print:hidden">{link.displayText}</span>
@@ -103,12 +104,12 @@ export default function Headline() {
           <div className="whitespace-nowrap1">
             <h1 className="text-2xl font-semibold print:text-lg">
               Lakhan Mandloi
-              <span className="ml-2 text-sm font-light print:hidden">
+              <span className="ml-2 text-xs font-light print:hidden">
                 (He/Him)
               </span>
             </h1>
-            <div className="mb-3 text-base text-gray-400 print:mb-3 print:text-sm xl:mb-0">
-              Frontend Developer (8+ Years Experience)
+            <div className="mb-3 text-sm text-gray-400 print:mb-3 print:text-sm xl:mb-0">
+              Senior Frontend Developer (8+ Years Experience)
             </div>
           </div>
           <div className="flex flex-col items-end justify-between">

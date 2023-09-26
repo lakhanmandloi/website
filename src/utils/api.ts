@@ -27,7 +27,8 @@ export interface Project {
   url: string;
   github?: string;
   details: string;
-  rolesResponsibilities: string;
+  roles: string[];
+  responsibilities?: string;
   keyAchievements?: string;
   startDate: string;
   endDate?: string;
@@ -81,7 +82,8 @@ export const getExperience = cache(async () => {
           details: `
           CLSA Forums: Premier Asia events in Hong Kong, Tokyo, Singapore, and Mumbai. Connects global leaders, industry specialists, and investors to explore market trends and engage with top executives from leading Asian and US companies. The Forum portal is central hub for investor and corporate registration, event details, and CLSA forum management
           `,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer'],
+          responsibilities: `
           - Design and development of visual elements of web app, GraphQL API integration, and thoroughly testing and debugging the system.
           - Ensure website responsiveness, cross-browser compatibility, security, and performance optimization, and uphold the code quality while adhering to the coding standards.
           `,
@@ -94,7 +96,8 @@ export const getExperience = cache(async () => {
           title: 'CLSA Corporate Website',
           url: 'https://www.clsa.com/',
           details: 'Corporate website of CLSA.',
-          rolesResponsibilities: `
+          roles: ['Frontend Developer'],
+          responsibilities: `
           - Administer the website, with a focus on meeting both business needs and security standards.
           - Assist the business team in tracking user engagement on the website and campaigns and help them with technical aspects related to social media handles.`,
           startDate: '2019-09-30',
@@ -151,13 +154,14 @@ export const getExperience = cache(async () => {
           url: 'https://diksha.gov.in/explore',
           github: 'https://github.com/Sunbird-Ed/SunbirdEd-portal',
           details: `Sunbird is an open source learning management platform developed by EkStep Foundation. EkStep Foundation is a not for profit foundation registered in India and co-founded by Nandan Nilekani.`,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer', 'UI Technical Lead'],
+          responsibilities: `
           - Led UI development team comprised of individuals from different companies, promoting innovation through R&D and proof-of-concept (POC) projects. Established development standards, crafted standard operating procedures (SOPs), conducted thorough code reviews, and provided mentorship to the team, while also offering guidance on expanding tech stack knowledge.
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           keyAchievements: `
-          - Designed a unique multilingual UI, fulfilling project specific requirements. Read about the implementation blog at [https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha](https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha).
-          - Implemented Design System available at [https://sunbird-ed.github.io/sunbird-style-guide/dist/#/](https://sunbird-ed.github.io/sunbird-style-guide/dist/#/).
+          - Designed a unique multilingual UI, fulfilling project specific requirements. Read about the implementation blog at <a href="https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha" target="_blank" >https://techjoomla.com/blog/beyond-joomla/a-multilingual-website-in-8-languages-diksha</a>.
+          - Implemented Design System available at <a href="https://sunbird-ed.github.io/sunbird-style-guide/dist/#/" target="_blank">https://sunbird-ed.github.io/sunbird-style-guide/dist/#/</a>.
           `,
           startDate: '2017-10-05',
           endDate: '2019-09-20',
@@ -170,7 +174,8 @@ export const getExperience = cache(async () => {
           details: `
           DIKSHA: Indian government initiative, digital platform for teachers and students, offers resources like textbooks, courses, and interactive content to improve education accessibility and quality through web and mobile apps. DIKSHA is available in 18 languages and has over 35 million users. DIKSHA is built on top of Sunbird, an open source learning management platform developed by EkStep Foundation.
           `,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer'],
+          responsibilities: `
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           startDate: '2017-09-01',
@@ -190,7 +195,8 @@ export const getExperience = cache(async () => {
           url: 'https://sunbird.org/',
           github: 'https://github.com/project-sunbird/sunbird.org-docs',
           details: `A multi-version documentation website for open source learning management platform Sunbird.`,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer', 'Scrum Master'],
+          responsibilities: `
           - Full stack development - DevOps, Frontend and Jekyll plugin development
           - Do estimations, planning and help the team whenever required.
           - Do R&D and prepare POC.
@@ -213,9 +219,7 @@ export const getExperience = cache(async () => {
           title: 'Artificiers CSS Library',
           url: 'https://github.com/lakhanmandloi/artificers',
           details: `It is a utility-first CSS library that followed a similar approach to Tailwind CSS, built when Tailwind CSS didn't existed.`,
-          rolesResponsibilities: `
-          - Product Owner and Technical Lead
-          `,
+          roles: ['Frontend Developer', 'UI Technical Lead', 'Product Owner'],
           keyAchievements: `
           - Recognizing its capabilities, it gained widespread adoption at the company level and became a staple in numerous products & projects.
           - It also played a significant role in facilitating the smooth migration of Joomla components from Bootstrap 3 to Bootstrap 4.`,
@@ -228,17 +232,13 @@ export const getExperience = cache(async () => {
           title: 'Tjbase Joomla Template',
           url: '',
           details: `A no-bloat, ultra-lightweight Joomla CMS template with a minimalistic design, prioritizing performance optimization, SEO enhancements, and code reusability.`,
-          rolesResponsibilities: `
-          - Product Owner and Technical Lead
-          `,
+          roles: ['Frontend Developer', 'UI Technical Lead', 'Product Owner'],
           keyAchievements: `
           - It is used in UIDAI's Aadhaar website, a high-traffic platform.
           - Its remarkable capabilities led to widespread adoption within the company, making it an indispensable component in numerous projects.`,
           startDate: '2016-04-15',
           endDate: '2019-09-20',
           skills: [
-            'Product Owner',
-            'Technical Lead',
             'Joomla',
             'PHP',
             'HTML',
@@ -253,12 +253,12 @@ export const getExperience = cache(async () => {
           title: 'EIT Climate-KIC : Pioneers into Practice',
           url: 'https://pioneers.climate-kic.org/',
           details: `Pioneers into Practice is a professional mobility programme for climate change professionals. It is a learning journey that takes place in different European countries.`,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer', 'UI Technical Lead', 'Scrum Master'],
+          responsibilities: `
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.`,
           startDate: '2016-06-07',
           endDate: '2017-08-30',
           skills: [
-            'Technical Lead',
             'Joomla',
             'PHP',
             'HTML',
@@ -275,15 +275,14 @@ export const getExperience = cache(async () => {
           title: 'EIT Climate-KIC : Climathon',
           url: 'https://climathon.climate-kic.org/',
           details: `Climathon is an annual global event that brings together the challenges of the world's cities with people who have the passion and ability to solve them.`,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer', 'UI Technical Lead', 'Scrum Master'],
+          responsibilities: `
           - As the primary client contact, I assessed project requirements, devised effective solutions, created project roadmaps, optimized resource allocation, and maintained transparent communication with regular updates to ensure client satisfaction.
           - Design, develop, and rigorously test website while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           startDate: '2016-06-07',
           endDate: '2017-08-30',
           skills: [
-            'Scrum Master',
-            'Technical Lead',
             'Joomla',
             'PHP',
             'HTML',
@@ -301,15 +300,14 @@ export const getExperience = cache(async () => {
           url: 'https://learning.climate-kic.org/',
           details: `EIT Climate-KIC is a European knowledge and innovation community focused on addressing climate change challenges. It aims to drive innovation, support startups, and promote sustainable solutions to mitigate and adapt to climate change. Learning Portal is a platform for EIT Climate-KIC's learning and development programmes.
           `,
-          rolesResponsibilities: `
+          roles: ['Frontend Developer', 'UI Technical Lead', 'Scrum Master'],
+          responsibilities: `
           - Served as Scrum Master and Technical Lead Dec 2016 till Aug 2017, I've been the primary client contact, responsible for assessing project requirements, devising effective solutions, creating project roadmaps, optimizing resource allocation, and maintaining transparent communication with regular updates to ensure client satisfaction.
           - Design, develop, and rigorously test website while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           `,
           startDate: '2015-04-15',
           endDate: '2017-08-30',
           skills: [
-            'Scrum Master',
-            'Technical Lead',
             'Joomla',
             'PHP',
             'HTML',
