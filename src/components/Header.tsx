@@ -130,14 +130,18 @@ export default function Headline() {
             <MapPinIcon className="mr-2 w-4 text-gray-400" />
             Indore, Madhya Pradesh, India
           </address>
-          <div className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden">
+          <a
+            className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden"
+            href="/Resume-Lakhan-Mandloi.pdf"
+            download
+          >
             <button className="w-full rounded-l-lg px-4 py-2">
               Download Resume
             </button>
             <button className="rounded-r-lg bg-violet-600 px-4 py-2">
               <ArrowDownTrayIcon className="w-5" />
             </button>
-          </div>
+          </a>
         </div>
       </div>
     </header>
