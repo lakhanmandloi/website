@@ -54,7 +54,7 @@ export default async function Education() {
                     </div>
                   </div>
                 </div>
-                <div className="border-b border-gray-200 group-last:hidden"></div>
+                <div className="border-b border-gray-200 group-last:hidden print:hidden"></div>
               </div>
             </div>
           );

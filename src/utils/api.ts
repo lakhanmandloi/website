@@ -219,7 +219,7 @@ export const getExperience = cache(async () => {
           title: 'Artificiers CSS Library',
           url: 'https://github.com/lakhanmandloi/artificers',
           details: `It is a utility-first CSS library that followed a similar approach to Tailwind CSS, built when Tailwind CSS didn't existed.`,
-          roles: ['Frontend Developer', 'UI Technical Lead', 'Product Owner'],
+          roles: ['Frontend Developer', 'Technical Lead'],
           keyAchievements: `
           - Recognizing its capabilities, it gained widespread adoption at the company level and became a staple in numerous products & projects.
           - It also played a significant role in facilitating the smooth migration of Joomla components from Bootstrap 3 to Bootstrap 4.`,
@@ -232,7 +232,7 @@ export const getExperience = cache(async () => {
           title: 'Tjbase Joomla Template',
           url: '',
           details: `A no-bloat, ultra-lightweight Joomla CMS template with a minimalistic design, prioritizing performance optimization, SEO enhancements, and code reusability.`,
-          roles: ['Frontend Developer', 'UI Technical Lead', 'Product Owner'],
+          roles: ['Frontend Developer', 'Technical Lead'],
           keyAchievements: `
           - It is used in UIDAI's Aadhaar website, a high-traffic platform.
           - Its remarkable capabilities led to widespread adoption within the company, making it an indispensable component in numerous projects.`,

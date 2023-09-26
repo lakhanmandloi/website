@@ -33,9 +33,11 @@ export default async function Projects() {
       </h3>
       <div className="projectslist">
         {sortedProjects.map((project) => {
+          const roles =
+            project.roles?.length > 0 ? project.roles.join(', ') : '';
           return (
             <div
-              className="mb-4 flex border-b border-gray-200 pb-4 last:mb-0 last:border-b-0 print:pb-4 md:mt-6 md:pb-6"
+              className="mb-4 flex border-b border-gray-200 pb-4 last:mb-0 last:border-b-0 print:mb-2 print:border-b-0 print:pb-2 md:mt-6 md:pb-6"
               key={project.id}
               id={project.id}
             >
@@ -64,16 +66,12 @@ export default async function Projects() {
                         <MDXRemote source={project.details} />
                       </div>
                     )}
-                    {project.roles?.length > 0 && (
+                    {roles && (
                       <div className="project-roles flex items-center">
                         <h5 className="md:text-md mr-1 text-sm font-medium">
                           Role:
                         </h5>
-                        <div>
-                          {project.roles.map((role) => {
-                            return <span key={role}>{role}</span>;
-                          })}
-                        </div>
+                        <div>{roles}</div>
                       </div>
                     )}
                     {project.responsibilities && showResponsibilities && (
@@ -97,7 +95,7 @@ export default async function Projects() {
                       </div>
                     )}
                     {project?.skills?.length > 0 && showSkills && (
-                      <div className="project-skills mt-2 flex">
+                      <div className="project-skills mt-2 flex pt-2">
                         <h5 className="md:text-md mr-1 text-sm font-medium">
                           Skills:
                         </h5>

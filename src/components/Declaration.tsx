@@ -12,7 +12,7 @@ export default function Declaration() {
       </div>
       <div className="mt-4 flex justify-between text-sm text-gray-500">
         <span>Date & Location:</span>
-        <span>Lakhan Mandloi</span>
+        <span className="mr-4">Lakhan Mandloi</span>
       </div>
     </section>
   );
