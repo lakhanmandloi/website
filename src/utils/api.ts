@@ -133,7 +133,7 @@ export const getExperience = cache(async () => {
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           - Screening and interviewing candidates for frontend development roles.
           `,
-          startDate: '2017-05-01',
+          startDate: '2019-06-01',
           endDate: '2019-09-20'
         },
         {
@@ -144,7 +144,7 @@ export const getExperience = cache(async () => {
           - In numerous projects, I served as the main point of contact for clients, where I evaluated project requirements, formulated efficient solutions, developed project roadmaps, and upheld transparent communication by providing regular updates to ensure client contentment.
           `,
           startDate: '2015-01-21',
-          endDate: '2017-05-01'
+          endDate: '2019-05-30'
         }
       ],
       projects: [
