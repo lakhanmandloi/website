@@ -132,7 +132,7 @@ export default function Headline() {
           </address>
           <a
             className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden"
-            href="/pdfs/Resume-Lakhan_Mandloi-v3.0.pdf"
+            href="/pdfs/Resume-Lakhan_Mandloi-v4.0.pdf"
             download
           >
             <button className="w-full rounded-l-lg px-4 py-2">
