@@ -48,7 +48,7 @@ export const getExperience = cache(async () => {
       location: 'Pune, Maharashtra, India',
       type: 'Full Time',
       startDate: '2019-09-30',
-      endDate: undefined,
+      endDate: '2023-12-29',
       roles: [
         {
           id: 'clsa-sse',
@@ -60,7 +60,7 @@ export const getExperience = cache(async () => {
           - Screening and interviewing candidates for frontend development roles.
           `,
           startDate: '2022-04-01',
-          endDate: undefined
+          endDate: '2023-12-29'
         },
         {
           id: 'clsa-se',
@@ -88,7 +88,7 @@ export const getExperience = cache(async () => {
           - Ensure website responsiveness, cross-browser compatibility, security, and performance optimization, and uphold the code quality while adhering to the coding standards.
           `,
           startDate: '2020-05-05',
-          endDate: undefined,
+          endDate: '2023-12-29',
           skills: ['React', 'GraphQL', 'Docker', 'Git', 'Github Actions']
         },
         {
