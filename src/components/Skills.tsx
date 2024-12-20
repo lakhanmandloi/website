@@ -30,7 +30,7 @@ import {
   SiNginx,
   SiPhoenixframework,
   SiPhp,
-  SiPlaywright,
+  //SiPlaywright,
   SiPostgresql,
   SiPrisma,
   SiReact,
@@ -324,12 +324,13 @@ const stacks: Stack[] = [
     hide: true,
     skills: [
       {
-        icon: (
+        /*icon: (
           <SiPlaywright
             color="default"
             size={size}
           />
-        ),
+        ),*/
+        icon: '',
         name: 'Playwright'
       }
     ]
@@ -536,7 +537,7 @@ const stacks: Stack[] = [
 const SkillTag = ({ skill }: { skill: Skill }) => {
   return (
     <span
-      className="flex cursor-pointer items-center rounded-full bg-violet-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-violet-200 print:text-xs md:text-sm"
+      className="flex cursor-pointer items-center rounded-full bg-violet-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-violet-200 md:text-sm print:text-xs"
       title={skill.tooltip ?? skill.name}
     >
       <span className="mr-2">{skill.icon}</span>
