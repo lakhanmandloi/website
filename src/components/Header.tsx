@@ -5,7 +5,8 @@ import {
   MapPinIcon,
   PhoneIcon
 } from '@heroicons/react/24/outline';
-import { SiGithub, SiLinkedin } from '@icons-pack/react-simple-icons';
+import { SiGithub } from '@icons-pack/react-simple-icons';
+import { FaLinkedin } from 'react-icons/fa';
 
 import Image from 'next/image';
 
@@ -62,7 +63,12 @@ export default function Headline() {
       printText: 'lakhanmandloi',
       tooltip: 'See my LinkedIn Profile',
       href: 'https://www.linkedin.com/in/lakhanmandloi',
-      icon: <SiLinkedin className="w-4" />,
+      icon: (
+        <FaLinkedin
+          className="w-6"
+          size={16}
+        />
+      ),
       display: true,
       print: true
     }
@@ -71,7 +77,7 @@ export default function Headline() {
   const LinkTag = ({ link }: { link: ILink }) => {
     return (
       <a
-        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 print:mb-1 print:mr-4 print:text-xs md:mr-4 xl:ml-4 xl:mr-0 ${
+        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 md:mr-4 xl:ml-4 xl:mr-0 print:mb-1 print:mr-4 print:text-xs ${
           !link.display ? 'hidden' : 'flex'
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
@@ -87,8 +93,8 @@ export default function Headline() {
   };
 
   return (
-    <header className="mx-auto w-full space-y-5 overflow-hidden rounded-xl bg-white shadow print:rounded-none print:border-b-2 print:shadow-none lg:max-w-5xl">
-      <div className="relative h-28 overflow-visible bg-[url('/images/banner-1.jpg')] bg-cover bg-fixed print:bg-local md:h-40">
+    <header className="mx-auto w-full space-y-5 overflow-hidden rounded-xl bg-white shadow lg:max-w-5xl print:rounded-none print:border-b-2 print:shadow-none">
+      <div className="relative h-28 overflow-visible bg-[url('/images/banner-1.jpg')] bg-cover bg-fixed md:h-40 print:bg-local">
         <div className="translate-1/2 print:space-between absolute -bottom-10 z-10 flex w-full items-end px-8 print:justify-between">
           <Image
             src="/images/avatar.jpg"
@@ -108,12 +114,12 @@ export default function Headline() {
                 (He/Him)
               </span>
             </h1>
-            <div className="mb-3 text-sm text-gray-400 print:mb-3 print:text-sm xl:mb-0">
-              Senior Frontend Developer (8+ Years Experience)
+            <div className="mb-3 text-sm text-gray-400 xl:mb-0 print:mb-3 print:text-sm">
+              Senior Frontend Developer (10+ Years Experience)
             </div>
           </div>
           <div className="flex flex-col items-end justify-between">
-            <nav className="flex flex-col flex-wrap print:flex-row md:flex-row">
+            <nav className="flex flex-col flex-wrap md:flex-row print:flex-row">
               {links.map((link) => {
                 return (
                   <LinkTag

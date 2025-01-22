@@ -25,7 +25,7 @@ export default async function Experience() {
               key={company.id}
               id={company.id}
             >
-              <div className="mr-6 hidden print:block md:block">
+              <div className="mr-6 hidden md:block print:block">
                 <a
                   href={company.url}
                   target="_blank"
@@ -46,7 +46,7 @@ export default async function Experience() {
                   <h4 className="text-sm font-medium print:text-xs">
                     {company.name}
                   </h4>
-                  <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 print:flex-row print:text-sm md:flex-row md:items-center md:gap-4">
+                  <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 md:flex-row md:items-center md:gap-4 print:flex-row print:text-sm">
                     <div className="flex items-center">
                       <CalendarIcon className="mr-1 w-4 print:w-3" />
                       <time>
@@ -94,7 +94,7 @@ export default async function Experience() {
                   })}
                 </ol>
                 {company.projects.length > 0 && (
-                  <div className="company-projects flex flex-col gap-1 print:hidden md:flex-row">
+                  <div className="company-projects flex flex-col gap-1 md:flex-row print:hidden">
                     <h5 className="text-sm font-semibold text-gray-600">
                       Projects:
                     </h5>
