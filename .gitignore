@@ -18,6 +18,7 @@
 # misc
 .DS_Store
 *.pem
+Thumbs.db
 
 # debug
 npm-debug.log*
@@ -33,3 +34,21 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+# Yarn cache and logs
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+.yarnrc.yml
+
+# Yarn Berry (v2+) lockfile (keep this!)
+# DO NOT ignore: yarn.lock
+# (You should commit yarn.lock to ensure consistent installs)
+
+# IDE/Editor settings (optional)
+.vscode/
+.idea/

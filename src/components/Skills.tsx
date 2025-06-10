@@ -1,14 +1,14 @@
 import {
-  SiAmazonec2,
-  SiAmazonrds,
-  SiAmazons3,
+  //SiAmazonec2,
+  //SiAmazonrds,
+  //SiAmazons3,
   SiAngular,
   SiApollographql,
   SiArchlinux,
   SiBootstrap,
   SiBun,
   SiCircleci,
-  SiCss3,
+  //SiCss3,
   SiDocker,
   SiElixir,
   SiFigma,
@@ -129,12 +129,13 @@ const stacks: Stack[] = [
         name: 'JavaScript'
       },
       {
-        icon: (
+        /*icon: (
           <SiCss3
             color="default"
             size={size}
           />
-        ),
+        ),*/
+        icon: '',
         name: 'CSS'
       },
       {
@@ -405,32 +406,35 @@ const stacks: Stack[] = [
         hide: true
       },
       {
-        icon: (
+        /*icon: (
           <SiAmazonec2
             color="default"
             size={size}
           />
-        ),
+        ),*/
+        icon: '',
         name: 'AWS EC2',
         hide: true
       },
       {
-        icon: (
+        /*icon: (
           <SiAmazons3
             color="default"
             size={size}
           />
-        ),
+        ),*/
+        icon: '',
         name: 'AWS S3',
         hide: true
       },
       {
-        icon: (
+        /*icon: (
           <SiAmazonrds
             color="default"
             size={size}
           />
-        ),
+        ),*/
+        icon: '',
         name: 'AWS RDS',
         hide: true
       },
@@ -554,9 +558,9 @@ export default function Skills() {
       <div className="skillslist">
         {stacks
           .filter((x) => x?.hide !== true)
-          .map((stack) => {
+          .map((stack, i) => {
             return (
-              <>
+              <div key={stack.name}>
                 <h4
                   className="mb-2 text-sm print:mb-1 print:text-xs"
                   key={stack.name}
@@ -575,7 +579,7 @@ export default function Skills() {
                       );
                     })}
                 </div>
-              </>
+              </div>
             );
           })}
       </div>
