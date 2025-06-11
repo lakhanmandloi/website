@@ -77,7 +77,7 @@ export default function Headline() {
   const LinkTag = ({ link }: { link: ILink }) => {
     return (
       <a
-        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 md:mr-4 xl:ml-4 xl:mr-0 print:mb-1 print:mr-4 print:text-xs ${
+        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 md:mr-4 xl:mr-0 xl:ml-4 print:mr-4 print:mb-1 print:text-xs ${
           !link.display ? 'hidden' : 'flex'
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
@@ -95,7 +95,7 @@ export default function Headline() {
   return (
     <header className="mx-auto w-full space-y-5 overflow-hidden rounded-xl bg-white shadow lg:max-w-5xl print:rounded-none print:border-b-2 print:shadow-none">
       <div className="relative h-28 overflow-visible bg-[url('/images/banner-1.jpg')] bg-cover bg-fixed md:h-40 print:bg-local">
-        <div className="translate-1/2 print:space-between absolute -bottom-10 z-10 flex w-full items-end px-8 print:justify-between">
+        <div className="print:space-between absolute -bottom-1/2 z-10 flex w-full -translate-y-1/2 items-end px-8 print:justify-between">
           <Image
             src="/images/avatar.jpg"
             alt="Lakhan Mandloi"

@@ -8,7 +8,7 @@ import {
   SiBootstrap,
   SiBun,
   SiCircleci,
-  //SiCss3,
+  SiCss,
   SiDocker,
   SiElixir,
   SiFigma,
@@ -129,13 +129,12 @@ const stacks: Stack[] = [
         name: 'JavaScript'
       },
       {
-        /*icon: (
-          <SiCss3
+        icon: (
+          <SiCss
             color="default"
             size={size}
           />
-        ),*/
-        icon: '',
+        ),
         name: 'CSS'
       },
       {
