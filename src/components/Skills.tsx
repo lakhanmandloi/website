@@ -28,6 +28,7 @@ import {
   SiMysql,
   SiNextdotjs,
   SiNginx,
+  SiNodedotjs,
   SiPhoenixframework,
   SiPhp,
   //SiPlaywright,
@@ -250,8 +251,25 @@ const stacks: Stack[] = [
   },
   {
     name: 'Backend Development',
-    hide: true,
     skills: [
+      {
+        icon: (
+          <SiBun
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Bun'
+      },
+      {
+        icon: (
+          <SiNodedotjs
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Node.js'
+      },
       {
         icon: (
           <SiPhp
@@ -272,12 +290,12 @@ const stacks: Stack[] = [
       },
       {
         icon: (
-          <SiMysql
+          <SiPrisma
             color="default"
             size={size}
           />
         ),
-        name: 'MySQL'
+        name: 'Prisma'
       }
     ]
   },
