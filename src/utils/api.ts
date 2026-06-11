@@ -8,7 +8,7 @@ export interface Company {
   logo: string;
   url: string;
   location: string;
-  type: 'Full Time' | 'Part Time';
+  type: 'Full Time' | 'Part Time' | 'Contract';
   startDate: string;
   endDate?: string;
   roles: {
@@ -40,6 +40,50 @@ export interface Project {
 
 export const getExperience = cache(async () => {
   const experience: Company[] = [
+    {
+      id: 'tafttech',
+      name: 'TAFT AI Technologies',
+      logo: '/images/logo-taftaitech.png',
+      url: 'https://tafttech.ai',
+      location: 'Indore, Madhya Pradesh, India',
+      type: 'Full Time',
+      startDate: '2026-06-01',
+      roles: [
+        {
+          id: 'tafttech-cofounder',
+          title: 'Co-Founder',
+          responsibilities: `
+          - Co-founded TAFT AI Technologies, building AI-driven products and engineering services.
+          - Drive product direction, technical architecture, and engineering standards across the stack.
+          - Own infrastructure, DevOps, and full-stack delivery from concept to production.
+          `,
+          startDate: '2026-06-01'
+        }
+      ],
+      projects: []
+    },
+    {
+      id: 'revive',
+      name: 'REVIVE Healthcare Group',
+      logo: '/images/logo-revive.jpeg',
+      url: 'https://www.revivehealthcaregroup.com/',
+      location: 'Remote',
+      type: 'Contract',
+      startDate: '2025-01-01',
+      roles: [
+        {
+          id: 'revive-devops',
+          title: 'DevOps Engineer',
+          responsibilities: `
+          - Sole DevOps engineer owning the entire CI/CD, infrastructure, and deployment lifecycle.
+          - Design, provision, and maintain cloud infrastructure with a focus on reliability, security, and cost efficiency.
+          - Automate build, test, and release pipelines, and set up monitoring, logging, and alerting.
+          `,
+          startDate: '2025-01-01'
+        }
+      ],
+      projects: []
+    },
     {
       id: 'clsa',
       name: 'CLSA Technology & Services LLP',

@@ -14,7 +14,7 @@ export default async function Experience() {
   const experiences = await getExperience();
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Experience
       </h3>
       <div className="experienceslist">
@@ -43,7 +43,7 @@ export default async function Experience() {
               </div>
               <div className="w-full space-y-2">
                 <div>
-                  <h4 className="text-sm font-medium print:text-xs">
+                  <h4 className="text-base font-semibold text-gray-800 print:text-xs">
                     {company.name}
                   </h4>
                   <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 md:flex-row md:items-center md:gap-4 print:flex-row print:text-sm">
@@ -73,7 +73,7 @@ export default async function Experience() {
                         className="mb-3 ml-4"
                         key={role.id}
                       >
-                        <div className="absolute -left-1.5 mt-1 h-3 w-3 rounded-full border border-white bg-gray-200"></div>
+                        <div className="absolute -left-1.5 mt-1 h-3 w-3 rounded-full border border-white bg-violet-200"></div>
                         <h5 className="text-sm font-semibold text-gray-700">
                           {role.title}
                         </h5>

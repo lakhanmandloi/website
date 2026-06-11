@@ -4,10 +4,10 @@ import {
   //SiAmazons3,
   SiAngular,
   SiApollographql,
-  SiArchlinux,
   SiBootstrap,
   SiBun,
   SiCircleci,
+  SiCloudflare,
   SiCss,
   SiDocker,
   SiElixir,
@@ -23,6 +23,7 @@ import {
   SiJira,
   SiJoomla,
   SiJquery,
+  SiKubernetes,
   SiLinux,
   SiMui,
   SiMysql,
@@ -34,6 +35,7 @@ import {
   //SiPlaywright,
   SiPostgresql,
   SiPrisma,
+  SiPython,
   SiReact,
   SiReacthookform,
   SiReactquery,
@@ -41,6 +43,7 @@ import {
   SiSemanticuireact,
   SiStyledcomponents,
   SiTailwindcss,
+  SiTerraform,
   SiTypescript,
   SiVercel,
   SiWordpress
@@ -53,7 +56,7 @@ interface Stack {
     | 'Backend Development'
     | 'CMS Development'
     | 'Static Site Generation'
-    | 'DevOps'
+    | 'DevOps & Cloud'
     | 'Testing'
     | 'Other'
     | 'Currently Learning';
@@ -72,6 +75,7 @@ interface Skill {
 const stacks: Stack[] = [
   {
     name: 'Frontend Development',
+    order: 1,
     skills: [
       {
         icon: (
@@ -251,6 +255,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Backend Development',
+    order: 2,
     skills: [
       {
         icon: (
@@ -301,6 +306,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'CMS Development',
+    order: 4,
     skills: [
       {
         icon: (
@@ -354,7 +360,8 @@ const stacks: Stack[] = [
     ]
   },
   {
-    name: 'DevOps',
+    name: 'DevOps & Cloud',
+    order: 3,
     skills: [
       {
         icon: (
@@ -367,12 +374,63 @@ const stacks: Stack[] = [
       },
       {
         icon: (
-          <SiGit
+          <SiKubernetes
             color="default"
             size={size}
           />
         ),
-        name: 'Git'
+        name: 'Kubernetes',
+        hide: true
+      },
+      {
+        icon: (
+          <SiTerraform
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Terraform'
+      },
+      {
+        icon: '',
+        name: 'AWS'
+      },
+      {
+        icon: (
+          <SiCloudflare
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Cloudflare',
+        hide: true
+      },
+      {
+        icon: (
+          <SiGithubactions
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'GitHub Actions'
+      },
+      {
+        icon: (
+          <SiJenkins
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Jenkins'
+      },
+      {
+        icon: (
+          <SiCircleci
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'CircleCI'
       },
       {
         icon: (
@@ -385,84 +443,21 @@ const stacks: Stack[] = [
       },
       {
         icon: (
-          <SiGithubactions
-            color="default"
-            size={size}
-          />
-        ),
-        name: 'Github Actions'
-      },
-      {
-        icon: (
-          <SiJenkins
-            color="default"
-            size={size}
-          />
-        ),
-        name: 'Jenkins',
-        hide: true
-      },
-      {
-        icon: (
-          <SiCircleci
-            color="default"
-            size={size}
-          />
-        ),
-        name: 'Circle CI',
-        hide: true
-      },
-      {
-        icon: (
-          <SiVercel
-            color="default"
-            size={size}
-          />
-        ),
-        name: 'Vercel',
-        hide: true
-      },
-      {
-        /*icon: (
-          <SiAmazonec2
-            color="default"
-            size={size}
-          />
-        ),*/
-        icon: '',
-        name: 'AWS EC2',
-        hide: true
-      },
-      {
-        /*icon: (
-          <SiAmazons3
-            color="default"
-            size={size}
-          />
-        ),*/
-        icon: '',
-        name: 'AWS S3',
-        hide: true
-      },
-      {
-        /*icon: (
-          <SiAmazonrds
-            color="default"
-            size={size}
-          />
-        ),*/
-        icon: '',
-        name: 'AWS RDS',
-        hide: true
-      },
-      {
-        icon: (
           <SiGnubash
             color="default"
             size={size}
           />
         ),
-        name: 'Shell Scripting',
+        name: 'Shell Scripting'
+      },
+      {
+        icon: (
+          <SiPython
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Python',
         hide: true
       },
       {
@@ -472,18 +467,25 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Linux',
-        hide: true
+        name: 'Linux'
       },
       {
         icon: (
-          <SiArchlinux
+          <SiGit
             color="default"
             size={size}
           />
         ),
-        name: 'Arch Linux',
-        hide: true
+        name: 'Git'
+      },
+      {
+        icon: (
+          <SiVercel
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Vercel'
       }
     ]
   },
@@ -561,7 +563,7 @@ const SkillTag = ({ skill }: { skill: Skill }) => {
       className="flex cursor-pointer items-center rounded-full bg-violet-100 px-2 py-1 text-xs transition-colors duration-300 ease-in-out hover:bg-violet-200 md:text-sm print:text-xs"
       title={skill.tooltip ?? skill.name}
     >
-      <span className="mr-2">{skill.icon}</span>
+      {skill.icon && <span className="mr-2">{skill.icon}</span>}
       <span className="text-gray-600">{skill.name}</span>
     </span>
   );
@@ -569,13 +571,14 @@ const SkillTag = ({ skill }: { skill: Skill }) => {
 export default function Skills() {
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-100 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Skills
       </h3>
       <div className="skillslist">
         {stacks
           .filter((x) => x?.hide !== true)
-          .map((stack, i) => {
+          .sort((a, b) => (a.order ?? 99) - (b.order ?? 99))
+          .map((stack) => {
             return (
               <div key={stack.name}>
                 <h4

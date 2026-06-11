@@ -1,4 +1,18 @@
 export const parseDate = (date: string) => new Date(date);
+// Career started at Tekdi Technologies on 2015-01-21.
+export const CAREER_START = '2015-01-21';
+export const yearsSince = (startDate: string) => {
+  const start = parseDate(startDate);
+  const now = new Date();
+  let years = now.getFullYear() - start.getFullYear();
+  if (
+    now.getMonth() < start.getMonth() ||
+    (now.getMonth() === start.getMonth() && now.getDate() < start.getDate())
+  ) {
+    years -= 1;
+  }
+  return years;
+};
 export const formatDate = (date?: string) => {
   if (!date) return 'Present';
   const parsedDate = parseDate(date);
