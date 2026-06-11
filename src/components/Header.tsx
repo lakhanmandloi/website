@@ -1,8 +1,7 @@
 import {
   EnvelopeIcon,
   LinkIcon,
-  MapPinIcon,
-  PhoneIcon
+  MapPinIcon
 } from '@heroicons/react/24/outline';
 import { SiGithub } from '@icons-pack/react-simple-icons';
 import { FaLinkedin } from 'react-icons/fa';
@@ -21,15 +20,6 @@ export default function Headline() {
     print: boolean;
   }
   const links: ILink[] = [
-    {
-      displayText: '+91-9754945975',
-      printText: '+91-9754945975',
-      tooltip: 'Call me',
-      href: 'tel:+919754945975',
-      icon: <PhoneIcon className="w-4" />,
-      display: false,
-      print: true
-    },
     {
       displayText: 'namaste@lakhanmandloi.in',
       printText: 'namaste@lakhanmandloi.in',
