@@ -8,6 +8,8 @@ import { FaLinkedin } from 'react-icons/fa';
 
 import Image from 'next/image';
 
+import { CAREER_START, yearsSince } from '@/utils/date';
+
 export default function Headline() {
   const size = 20;
   interface ILink {
@@ -104,7 +106,8 @@ export default function Headline() {
               </span>
             </h1>
             <div className="mb-3 text-sm text-gray-400 xl:mb-0 print:mb-3 print:text-sm">
-              Senior Frontend Developer (10+ Years Experience)
+              Co-Founder, TAFT AI Technologies · DevOps &amp; Frontend Engineer (
+              {yearsSince(CAREER_START)}+ Years)
             </div>
           </div>
           <div className="flex flex-col items-end justify-between">

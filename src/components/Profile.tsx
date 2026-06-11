@@ -1,3 +1,5 @@
+import { CAREER_START, yearsSince } from '@/utils/date';
+
 export default function Profile() {
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
@@ -5,12 +7,14 @@ export default function Profile() {
         Profile
       </h3>
       <p className="prose prose-sm max-w-none text-gray-500 md:prose-base print:leading-snug">
-        I&apos;m a seasoned Senior Frontend Developer with 10+ years of
-        experience, specialising in user-friendly solutions that positively
-        impact society and the environment. Additionally, I have a strong
-        background in DevOps, ensuring seamless integration and deployment for
-        the projects I&apos;ve worked on. I&apos;ve led projects as a tech lead,
-        always prioritising quality and user experience.
+        I&apos;m an engineer and entrepreneur with {yearsSince(CAREER_START)}+
+        years of experience, currently co-founding TAFT AI Technologies and
+        working as the sole DevOps engineer at REVIVE Healthcare Group. I
+        specialise in DevOps — owning CI/CD,
+        infrastructure, and deployments — backed by a deep frontend background
+        building user-friendly solutions that positively impact society and the
+        environment. I&apos;ve led projects as a tech lead, always prioritising
+        quality, reliability, and user experience.
       </p>
     </section>
   );
