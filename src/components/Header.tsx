@@ -68,7 +68,7 @@ export default function Headline() {
   const LinkTag = ({ link }: { link: ILink }) => {
     return (
       <a
-        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 md:mr-4 xl:mr-0 xl:ml-4 print:mr-4 print:mb-1 print:text-xs ${
+        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 transition-colors hover:text-violet-600 md:mr-4 xl:mr-0 xl:ml-4 print:mr-4 print:mb-1 print:text-xs ${
           !link.display ? 'hidden' : 'flex'
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
@@ -90,7 +90,7 @@ export default function Headline() {
           <Image
             src="/images/avatar.jpg"
             alt="Lakhan Mandloi"
-            className="cursor-pointer rounded-full bg-pink-200 shadow-md"
+            className="cursor-pointer rounded-full bg-violet-100 shadow-md"
             width={80}
             height={80}
           />
@@ -98,14 +98,14 @@ export default function Headline() {
       </div>
       <div className="flex flex-col p-6 pt-8 print:p-8 print:pb-4">
         <div className="flex flex-col items-start justify-between md:mb-4 xl:flex-row xl:items-center">
-          <div className="whitespace-nowrap1">
+          <div>
             <h1 className="text-2xl font-semibold print:text-lg">
               Lakhan Mandloi
               <span className="ml-2 text-xs font-light print:hidden">
                 (He/Him)
               </span>
             </h1>
-            <div className="mb-3 text-sm text-gray-400 xl:mb-0 print:mb-3 print:text-sm">
+            <div className="mb-3 text-sm text-gray-500 xl:mb-0 print:mb-3 print:text-sm">
               Co-Founder, TAFT AI Technologies · Full Stack Developer (
               {yearsSince(CAREER_START)}+ Years)
             </div>
