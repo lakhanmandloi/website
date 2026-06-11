@@ -106,7 +106,7 @@ export default function Headline() {
               </span>
             </h1>
             <div className="mb-3 text-sm text-gray-400 xl:mb-0 print:mb-3 print:text-sm">
-              Co-Founder, TAFT AI Technologies · DevOps &amp; Frontend Engineer (
+              Co-Founder, TAFT AI Technologies · Full Stack Developer (
               {yearsSince(CAREER_START)}+ Years)
             </div>
           </div>

@@ -7,13 +7,13 @@ export default function Profile() {
         Profile
       </h3>
       <p className="prose prose-sm max-w-none text-gray-500 md:prose-base print:leading-snug">
-        I&apos;m an engineer and entrepreneur with {yearsSince(CAREER_START)}+
-        years of experience, currently co-founding TAFT AI Technologies and
-        working as the sole DevOps engineer at REVIVE Healthcare Group. I
-        specialise in DevOps — owning CI/CD,
-        infrastructure, and deployments — backed by a deep frontend background
-        building user-friendly solutions that positively impact society and the
-        environment. I&apos;ve led projects as a tech lead, always prioritising
+        I&apos;m a full stack developer and entrepreneur with{' '}
+        {yearsSince(CAREER_START)}+ years of experience, currently co-founding
+        TAFT AI Technologies and working as the sole DevOps engineer at REVIVE
+        Healthcare Group. I work across the stack — frontend, backend, and
+        DevOps — building user-friendly solutions that positively impact society
+        and the environment, and owning everything from CI/CD and infrastructure
+        to deployment. I&apos;ve led projects as a tech lead, always prioritising
         quality, reliability, and user experience.
       </p>
     </section>
