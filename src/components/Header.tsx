@@ -136,18 +136,6 @@ export default function Headline() {
           >
             Work with TAFT AI →
           </a>
-          {/* <a
-            className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden"
-            href="/pdfs/Resume-Lakhan_Mandloi-v5.0.pdf"
-            download
-          >
-            <button className="w-full rounded-l-lg px-4 py-2">
-              Download Resume
-            </button>
-            <button className="rounded-r-lg bg-violet-600 px-4 py-2">
-              <ArrowDownTrayIcon className="w-5" />
-            </button>
-          </a> */}
         </div>
       </div>
     </header>
