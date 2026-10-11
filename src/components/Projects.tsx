@@ -28,9 +28,9 @@ export default async function Projects() {
   const showSkills = true;
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Projects
-      </h3>
+      </h2>
       <div className="projectslist">
         {sortedProjects.map((project) => {
           const roles =
@@ -43,9 +43,9 @@ export default async function Projects() {
             >
               <div className="w-full space-y-2">
                 <div>
-                  <h4 className="text-sm font-medium print:text-xs">
+                  <h3 className="text-sm font-medium print:text-xs">
                     {project.title}
-                  </h4>
+                  </h3>
                   <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 md:flex-row md:items-center md:gap-4 md:text-sm print:flex-row">
                     <div className="flex items-center">
                       <CalendarIcon className="mr-1 w-4 print:w-3" />
@@ -68,17 +68,17 @@ export default async function Projects() {
                     )}
                     {roles && (
                       <div className="project-roles flex items-center">
-                        <h5 className="md:text-md mr-1 text-sm font-medium">
+                        <h4 className="md:text-md mr-1 text-sm font-medium">
                           Role:
-                        </h5>
+                        </h4>
                         <div>{roles}</div>
                       </div>
                     )}
                     {project.responsibilities && showResponsibilities && (
                       <div className="project-responsibilites">
-                        <h5 className="md:text-md text-sm font-medium">
+                        <h4 className="md:text-md text-sm font-medium">
                           Responsibilities:
-                        </h5>
+                        </h4>
                         <div className="prose prose-sm max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                           <MDXRemote source={project.responsibilities} />
                         </div>
@@ -86,9 +86,9 @@ export default async function Projects() {
                     )}
                     {project.keyAchievements && showKeyAchievements && (
                       <div className="project-keyAchievements">
-                        <h5 className="md:text-md text-sm font-medium">
+                        <h4 className="md:text-md text-sm font-medium">
                           Key Achievements:
-                        </h5>
+                        </h4>
                         <div className="prose prose-sm prose-a:font-normal prose-a:text-gray-500 max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                           <MDXRemote source={project.keyAchievements} />
                         </div>
@@ -96,9 +96,9 @@ export default async function Projects() {
                     )}
                     {project?.skills?.length > 0 && showSkills && (
                       <div className="project-skills mt-2 flex pt-2">
-                        <h5 className="md:text-md mr-1 text-sm font-medium">
+                        <h4 className="md:text-md mr-1 text-sm font-medium">
                           Skills:
-                        </h5>
+                        </h4>
                         <div className="flex flex-wrap gap-1.5">
                           {project?.skills.map((skill) => {
                             return (

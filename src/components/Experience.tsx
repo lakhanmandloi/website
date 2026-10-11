@@ -14,9 +14,9 @@ export default async function Experience() {
   const experiences = await getExperience();
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Experience
-      </h3>
+      </h2>
       <div className="experienceslist">
         {experiences.map((company) => {
           return (
@@ -43,9 +43,9 @@ export default async function Experience() {
               </div>
               <div className="w-full space-y-2">
                 <div>
-                  <h4 className="text-base font-semibold text-gray-800 print:text-xs">
+                  <h3 className="text-base font-semibold text-gray-800 print:text-xs">
                     {company.name}
-                  </h4>
+                  </h3>
                   <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 md:flex-row md:items-center md:gap-4 print:flex-row print:text-sm">
                     <div className="flex items-center">
                       <CalendarIcon className="mr-1 w-4 print:w-3" />
@@ -74,17 +74,17 @@ export default async function Experience() {
                         key={role.id}
                       >
                         <div className="absolute -left-1.5 mt-1 h-3 w-3 rounded-full border border-white bg-violet-200"></div>
-                        <h5 className="text-sm font-semibold text-gray-700">
+                        <h4 className="text-sm font-semibold text-gray-700">
                           {role.title}
-                        </h5>
+                        </h4>
                         <time className="mt-1 mb-1 flex items-center text-sm leading-none font-normal text-gray-500 print:text-sm">
                           <CalendarIcon className="mr-1 w-4 print:w-3" />
                           {duration(role.startDate, role.endDate)}
                         </time>
                         <div className="role-responsibilities">
-                          <h5 className="mt-2 hidden text-sm text-gray-500 print:mt-1">
+                          <h4 className="mt-2 hidden text-sm text-gray-500 print:mt-1">
                             Responsibilities:
-                          </h5>
+                          </h4>
                           <div className="prose prose-sm mt-2 max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                             <MDXRemote source={role.responsibilities} />
                           </div>
@@ -95,9 +95,9 @@ export default async function Experience() {
                 </ol>
                 {company.projects.length > 0 && (
                   <div className="company-projects flex flex-col gap-1 md:flex-row print:hidden">
-                    <h5 className="text-sm font-semibold text-gray-600">
+                    <h4 className="text-sm font-semibold text-gray-600">
                       Projects:
-                    </h5>
+                    </h4>
                     <div className="company-projectlist flex flex-wrap gap-1.5">
                       {company.projects.map((project) => {
                         return (

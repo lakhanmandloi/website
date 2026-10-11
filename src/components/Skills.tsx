@@ -848,9 +848,9 @@ const SkillTag = ({ skill }: { skill: Skill }) => {
 export default function Skills() {
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Skills
-      </h3>
+      </h2>
       <div className="skillslist">
         {stacks
           .filter((x) => x?.hide !== true)
@@ -858,12 +858,12 @@ export default function Skills() {
           .map((stack) => {
             return (
               <div key={stack.name}>
-                <h4
+                <h3
                   className="mb-2 text-sm print:mb-1 print:text-xs"
                   key={stack.name}
                 >
                   {stack.name}
-                </h4>
+                </h3>
                 <div className="mb-4 flex flex-wrap gap-2.5 print:mb-2">
                   {stack.skills
                     .filter((x) => x?.hide !== true)

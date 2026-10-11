@@ -12,9 +12,9 @@ export default async function Education() {
   const educations = await getEducation();
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Education
-      </h3>
+      </h2>
       <div className="educationlist">
         {educations.map((education) => {
           return (
@@ -34,9 +34,9 @@ export default async function Education() {
               </div>
               <div className="w-full space-y-2">
                 <div>
-                  <h4 className="text-sm font-medium print:text-xs">
+                  <h3 className="text-sm font-medium print:text-xs">
                     {education.school} ( Affiliated to {education.affiliation} )
-                  </h4>
+                  </h3>
                   <div className="mt-1 flex w-full flex-col space-y-0.5 text-sm text-gray-500 print:text-sm">
                     <div className="flex items-center">
                       <AcademicCapIcon className="mr-2 w-4" />

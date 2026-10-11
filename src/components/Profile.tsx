@@ -3,9 +3,9 @@ import { CAREER_START, yearsSince } from '@/utils/date';
 export default function Profile() {
   return (
     <section className="rounded-xl bg-white p-6 shadow print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Profile
-      </h3>
+      </h2>
       <p className="prose prose-sm md:prose-base max-w-none text-gray-500 print:leading-snug">
         Co-founder of TAFT AI Technologies Private Limited. I work as a forward
         deployed engineer: I embed with a team, own the problem end-to-end, and

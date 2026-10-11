@@ -1,9 +1,9 @@
 export default function Declaration() {
   return (
     <section className="hidden rounded-xl bg-white p-6 shadow print:block print:p-0 print:shadow-none">
-      <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:border-b print:text-sm">
+      <h2 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:border-b print:text-sm">
         Declaration
-      </h3>
+      </h2>
       <div className="prose prose-sm prose-stone print:prose-sm md:prose-base max-w-none text-gray-500">
         <p>
           I hereby declare that the above mentioned information is true to the

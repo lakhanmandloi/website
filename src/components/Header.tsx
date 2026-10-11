@@ -105,12 +105,14 @@ export default function Headline() {
       <div className="flex flex-col p-6 pt-8 print:p-8 print:pb-4">
         <div className="flex flex-col items-start justify-between md:mb-4 xl:flex-row xl:items-center">
           <div>
-            <h1 className="text-2xl font-semibold print:text-lg">
-              Lakhan Mandloi
+            <div className="flex items-baseline">
+              <h1 className="text-2xl font-semibold print:text-lg">
+                Lakhan Mandloi
+              </h1>
               <span className="ml-2 text-xs font-light print:hidden">
                 (He/Him)
               </span>
-            </h1>
+            </div>
             <div className="mb-3 text-sm text-gray-500 xl:mb-0 print:mb-3 print:text-sm">
               Co-founder, TAFT AI · Forward Deployed Engineer ·{' '}
               {yearsSince(CAREER_START)}+ yrs
