@@ -88,7 +88,7 @@ interface Skill {
 const stacks: Stack[] = [
   {
     name: 'AI-Assisted Engineering',
-    order: 0,
+    order: 1,
     skills: [
       {
         icon: (
@@ -130,7 +130,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'AI Engineering',
-    order: 0.5,
+    order: 0,
     skills: [
       {
         icon: '',
@@ -162,7 +162,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Frontend Development',
-    order: 1,
+    order: 2,
     skills: [
       {
         icon: (
@@ -343,7 +343,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Backend Development',
-    order: 2,
+    order: 3,
     skills: [
       {
         icon: (
@@ -418,7 +418,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'CMS Development',
-    order: 4,
+    order: 9,
     hide: true,
     skills: [
       {
@@ -443,7 +443,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Static Site Generation',
-    order: 5,
+    order: 10,
     hide: true,
     skills: [
       {
@@ -478,7 +478,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Security',
-    order: 6.5,
+    order: 5,
     skills: [
       {
         icon: '',
@@ -545,7 +545,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'DevOps & Cloud',
-    order: 3,
+    order: 4,
     skills: [
       {
         icon: (
@@ -763,6 +763,77 @@ const stacks: Stack[] = [
   }
 ];
 
+// Display order within each group: most in-demand first. Unlisted skills keep
+// their position after these.
+const SKILL_PRIORITY = [
+  // AI engineering
+  'AI Agents',
+  'RAG',
+  'LLM Evals',
+  'Ollama',
+  'Prompt Engineering',
+  // AI-assisted engineering
+  'Claude Code',
+  'Claude',
+  'GitHub Copilot',
+  'ChatGPT',
+  'Vibe Coding',
+  // Frontend
+  'Next.js',
+  'React',
+  'TypeScript',
+  'Tailwind CSS',
+  'GraphQL',
+  'JavaScript',
+  'HTML',
+  'CSS',
+  // Backend
+  'Node.js',
+  'Bun',
+  'PostgreSQL',
+  'ClickHouse',
+  'Prisma',
+  'GraphQL Yoga',
+  'Elysia',
+  // DevOps and cloud
+  'Kubernetes',
+  'Docker',
+  'Terraform',
+  'AWS',
+  'Microsoft Azure',
+  'GitHub Actions',
+  'Vercel',
+  'Amazon EC2',
+  'Amazon S3',
+  'Amazon RDS',
+  'Linux',
+  'Nginx',
+  'Shell Scripting',
+  'Git',
+  'DNS Management',
+  // Testing
+  'Playwright',
+  'Jest',
+  // Analytics and marketing
+  'Google Analytics',
+  'Metabase',
+  'Google Tag Manager',
+  'LinkedIn Marketing',
+  // Practices
+  'Full-Stack Development',
+  'Technical Leadership',
+  'Software as a Service (SaaS)',
+  'User Experience (UX)',
+  'User Interface Design',
+  'Agile Methodologies',
+  'Scrum Master',
+  'Requirements Gathering'
+];
+const priority = (name: string) => {
+  const index = SKILL_PRIORITY.indexOf(name);
+  return index === -1 ? SKILL_PRIORITY.length : index;
+};
+
 const SkillTag = ({ skill }: { skill: Skill }) => {
   return (
     <span
@@ -796,6 +867,7 @@ export default function Skills() {
                 <div className="mb-4 flex flex-wrap gap-2.5 print:mb-2">
                   {stack.skills
                     .filter((x) => x?.hide !== true)
+                    .toSorted((a, b) => priority(a.name) - priority(b.name))
                     .map((skill) => {
                       return (
                         <SkillTag
