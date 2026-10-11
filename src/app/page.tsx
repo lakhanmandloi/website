@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="mx-auto max-w-5xl print:px-8 print:pt-0 ">
+      <main className="mx-auto max-w-5xl print:px-8 print:pt-0">
         <article className="space-y-5 print:space-y-4">
           <Profile />
           <Skills />

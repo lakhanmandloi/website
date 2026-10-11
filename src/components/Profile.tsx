@@ -6,7 +6,7 @@ export default function Profile() {
       <h3 className="mb-4 border-b-2 border-gray-200 pb-1 text-lg font-semibold print:mb-2 print:border-b print:text-sm">
         Profile
       </h3>
-      <p className="prose prose-sm max-w-none text-gray-500 md:prose-base print:leading-snug">
+      <p className="prose prose-sm md:prose-base max-w-none text-gray-500 print:leading-snug">
         Co-founder of TAFT AI Technologies Private Limited. I work as a forward
         deployed engineer: I embed with a team, own the problem end-to-end, and
         ship it to production, using AI tools to move faster without dropping

@@ -77,7 +77,7 @@ export default async function Experience() {
                         <h5 className="text-sm font-semibold text-gray-700">
                           {role.title}
                         </h5>
-                        <time className="mb-1 mt-1 flex items-center text-sm font-normal leading-none text-gray-500 print:text-sm">
+                        <time className="mt-1 mb-1 flex items-center text-sm leading-none font-normal text-gray-500 print:text-sm">
                           <CalendarIcon className="mr-1 w-4 print:w-3" />
                           {duration(role.startDate, role.endDate)}
                         </time>

@@ -37,7 +37,7 @@ export default async function Projects() {
             project.roles?.length > 0 ? project.roles.join(', ') : '';
           return (
             <div
-              className="mb-4 flex border-b border-gray-200 pb-4 last:mb-0 last:border-b-0 print:mb-2 print:border-b-0 print:pb-2 md:mt-6 md:pb-6"
+              className="mb-4 flex border-b border-gray-200 pb-4 last:mb-0 last:border-b-0 md:mt-6 md:pb-6 print:mb-2 print:border-b-0 print:pb-2"
               key={project.id}
               id={project.id}
             >
@@ -46,7 +46,7 @@ export default async function Projects() {
                   <h4 className="text-sm font-medium print:text-xs">
                     {project.title}
                   </h4>
-                  <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 print:flex-row md:flex-row md:items-center md:gap-4 md:text-sm">
+                  <div className="mt-1 flex w-full flex-col items-start gap-1 text-sm text-gray-500 md:flex-row md:items-center md:gap-4 md:text-sm print:flex-row">
                     <div className="flex items-center">
                       <CalendarIcon className="mr-1 w-4 print:w-3" />
                       <time>
@@ -89,7 +89,7 @@ export default async function Projects() {
                         <h5 className="md:text-md text-sm font-medium">
                           Key Achievements:
                         </h5>
-                        <div className="prose prose-sm max-w-none leading-snug text-gray-500 prose-a:font-normal prose-a:text-gray-500 print:text-sm print:leading-tight">
+                        <div className="prose prose-sm prose-a:font-normal prose-a:text-gray-500 max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                           <MDXRemote source={project.keyAchievements} />
                         </div>
                       </div>

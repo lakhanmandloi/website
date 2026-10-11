@@ -9,7 +9,8 @@ import { CAREER_START, yearsSince } from '@/utils/date';
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 const siteUrl = 'https://lakhanmandloi.in';
-const title = 'Lakhan Mandloi — Co-founder, TAFT AI · Forward Deployed Engineer';
+const title =
+  'Lakhan Mandloi — Co-founder, TAFT AI · Forward Deployed Engineer';
 const description = `Co-founder of TAFT AI Technologies Private Limited · Forward Deployed Engineer with ${yearsSince(CAREER_START)}+ years shipping products to production across frontend, backend, and DevOps.`;
 
 export const metadata: Metadata = {
