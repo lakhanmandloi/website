@@ -29,6 +29,7 @@ import {
   SiKubernetes,
   SiLinux,
   SiMetabase,
+  SiModelcontextprotocol,
   SiMui,
   SiMysql,
   SiNextdotjs,
@@ -148,6 +149,20 @@ const stacks: Stack[] = [
       {
         icon: '',
         name: 'Prompt Engineering'
+      },
+      {
+        icon: (
+          <SiModelcontextprotocol
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'MCP',
+        tooltip: 'Model Context Protocol'
+      },
+      {
+        icon: '',
+        name: 'Fine-tuning'
       },
       {
         icon: (
@@ -484,6 +499,10 @@ const stacks: Stack[] = [
         icon: '',
         name: 'Microsoft Sentinel',
         tooltip: 'Microsoft Sentinel (SIEM)'
+      },
+      {
+        icon: '',
+        name: 'SOC 2 Compliance'
       }
     ]
   },
@@ -529,6 +548,7 @@ const stacks: Stack[] = [
     order: 8,
     skills: [
       { name: 'Full-Stack Development' },
+      { name: 'Custom Software Development' },
       { name: 'Front-End Development', hide: true },
       { name: 'Software Development', hide: true },
       { name: 'Web Development', hide: true },
@@ -594,6 +614,10 @@ const stacks: Stack[] = [
       {
         icon: '',
         name: 'DNS Management'
+      },
+      {
+        icon: '',
+        name: 'Cloud Management'
       },
       {
         icon: <VscAzure size={size} />,
@@ -771,6 +795,8 @@ const SKILL_PRIORITY = [
   'RAG',
   'LLM Evals',
   'Ollama',
+  'MCP',
+  'Fine-tuning',
   'Prompt Engineering',
   // AI-assisted engineering
   'Claude Code',
@@ -810,6 +836,7 @@ const SKILL_PRIORITY = [
   'Nginx',
   'Shell Scripting',
   'Git',
+  'Cloud Management',
   'DNS Management',
   // Testing
   'Playwright',
@@ -821,6 +848,7 @@ const SKILL_PRIORITY = [
   'LinkedIn Marketing',
   // Practices
   'Full-Stack Development',
+  'Custom Software Development',
   'Technical Leadership',
   'Software as a Service (SaaS)',
   'User Experience (UX)',

@@ -23,7 +23,9 @@ export const metadata: Metadata = {
   },
   description,
   alternates: {
-    canonical: '/'
+    canonical: '/',
+    // Plain-text summary for AI assistants and crawlers.
+    types: { 'text/plain': '/llms.txt' }
   },
   authors: [{ name: 'Lakhan Mandloi', url: siteUrl }],
   creator: 'Lakhan Mandloi',
@@ -112,7 +114,16 @@ const jsonLd = {
         'Docker',
         'Terraform',
         'AWS',
-        'Microsoft Azure'
+        'Microsoft Azure',
+        'Model Context Protocol (MCP)',
+        'LLM fine-tuning',
+        'Custom software development',
+        'Cloud management',
+        'SOC 2 compliance',
+        'Healthcare technology',
+        'E-commerce',
+        'Financial services technology',
+        'Education technology (edtech)'
       ],
       address: {
         '@type': 'PostalAddress',

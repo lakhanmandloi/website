@@ -12,17 +12,21 @@
 - **CLSA Technology & Services LLP** (2019–2023): Software Engineer, then Senior Software Engineer. Frontend and GraphQL work on the CITIC CLSA Forums web app and the CLSA corporate website.
 - **Tekdi Technologies Pvt Ltd** (2015–2019): Webmaster, then Senior Frontend Developer. UI technical lead for Sunbird and DIKSHA (India's national education platform), the Sunbird documentation portal, the Artificers CSS library and the Tjbase Joomla template used on UIDAI's Aadhaar website.
 
+## Industries
+
+Healthcare (REVIVE Healthcare Group), e-commerce (REVIVE's e-commerce systems), finance (CLSA, an Asian investment bank and broker) and edtech (Sunbird and DIKSHA, India's national education platform).
+
 ## Skills
 
-- AI engineering: RAG, LLM evals, AI agents, prompt engineering, Ollama
+- AI engineering: AI agents, RAG, LLM evals, MCP (Model Context Protocol), fine-tuning, prompt engineering, Ollama
 - AI-assisted engineering: Claude, Claude Code, ChatGPT, GitHub Copilot, vibe coding
-- Security: Microsoft Sentinel
+- Security: Microsoft Sentinel, SOC 2 compliance
 - Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, GraphQL
 - Backend: Node.js, Bun, Elysia, GraphQL Yoga, PostgreSQL, ClickHouse, Prisma
-- DevOps and cloud: Docker, Kubernetes, Terraform, AWS (EC2, S3, RDS), Microsoft Azure, DNS management, GitHub Actions, Nginx, Linux, Vercel
+- DevOps and cloud: Docker, Kubernetes, Terraform, AWS (EC2, S3, RDS), Microsoft Azure, cloud management, DNS management, GitHub Actions, Nginx, Linux, Vercel
 - Testing: Playwright, Jest
 - Analytics and marketing: Google Analytics, Google Tag Manager, Metabase, LinkedIn marketing
-- Practices: full-stack development, SaaS, UX and UI design, technical leadership, Agile and Scrum, requirements gathering
+- Practices: full-stack development, custom software development, SaaS, UX and UI design, technical leadership, Agile and Scrum, requirements gathering
 - Earlier work also used: PHP, Joomla, WordPress, Jekyll, Angular, Bootstrap, SCSS, Jenkins, CircleCI
 
 ## Links
