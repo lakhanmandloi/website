@@ -34,6 +34,7 @@ import {
   SiNextdotjs,
   SiNginx,
   SiNodedotjs,
+  SiOllama,
   SiPhoenixframework,
   SiPhp,
   SiPostgresql,
@@ -60,6 +61,8 @@ const size = 14;
 interface Stack {
   name:
     | 'AI-Assisted Engineering'
+    | 'AI Engineering'
+    | 'Security'
     | 'Frontend Development'
     | 'Backend Development'
     | 'CMS Development'
@@ -121,11 +124,39 @@ const stacks: Stack[] = [
       },
       {
         icon: '',
+        name: 'Vibe Coding'
+      }
+    ]
+  },
+  {
+    name: 'AI Engineering',
+    order: 0.5,
+    skills: [
+      {
+        icon: '',
+        name: 'RAG',
+        tooltip: 'Retrieval-augmented generation'
+      },
+      {
+        icon: '',
+        name: 'LLM Evals'
+      },
+      {
+        icon: '',
         name: 'AI Agents'
       },
       {
         icon: '',
-        name: 'Vibe Coding'
+        name: 'Prompt Engineering'
+      },
+      {
+        icon: (
+          <SiOllama
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Ollama'
       }
     ]
   },
@@ -446,6 +477,17 @@ const stacks: Stack[] = [
     ]
   },
   {
+    name: 'Security',
+    order: 6.5,
+    skills: [
+      {
+        icon: '',
+        name: 'Microsoft Sentinel',
+        tooltip: 'Microsoft Sentinel (SIEM)'
+      }
+    ]
+  },
+  {
     name: 'Analytics & Marketing',
     order: 7,
     skills: [
@@ -556,10 +598,6 @@ const stacks: Stack[] = [
       {
         icon: <VscAzure size={size} />,
         name: 'Microsoft Azure'
-      },
-      {
-        icon: '',
-        name: 'Microsoft Sentinel'
       },
       {
         icon: (
