@@ -68,17 +68,17 @@ export default async function Projects() {
                     )}
                     {roles && (
                       <div className="project-roles flex items-center">
-                        <h4 className="md:text-md mr-1 text-sm font-medium">
+                        <div className="md:text-md mr-1 text-sm font-medium">
                           Role:
-                        </h4>
+                        </div>
                         <div>{roles}</div>
                       </div>
                     )}
                     {project.responsibilities && showResponsibilities && (
                       <div className="project-responsibilites">
-                        <h4 className="md:text-md text-sm font-medium">
+                        <div className="md:text-md text-sm font-medium">
                           Responsibilities:
-                        </h4>
+                        </div>
                         <div className="prose prose-sm max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                           <MDXRemote source={project.responsibilities} />
                         </div>
@@ -86,9 +86,9 @@ export default async function Projects() {
                     )}
                     {project.keyAchievements && showKeyAchievements && (
                       <div className="project-keyAchievements">
-                        <h4 className="md:text-md text-sm font-medium">
+                        <div className="md:text-md text-sm font-medium">
                           Key Achievements:
-                        </h4>
+                        </div>
                         <div className="prose prose-sm prose-a:font-normal prose-a:text-gray-500 max-w-none leading-snug text-gray-500 print:text-sm print:leading-tight">
                           <MDXRemote source={project.keyAchievements} />
                         </div>
@@ -96,9 +96,9 @@ export default async function Projects() {
                     )}
                     {project?.skills?.length > 0 && showSkills && (
                       <div className="project-skills mt-2 flex pt-2">
-                        <h4 className="md:text-md mr-1 text-sm font-medium">
+                        <div className="md:text-md mr-1 text-sm font-medium">
                           Skills:
-                        </h4>
+                        </div>
                         <div className="flex flex-wrap gap-1.5">
                           {project?.skills.map((skill) => {
                             return (
