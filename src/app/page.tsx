@@ -23,6 +23,18 @@ export default function Home() {
           <Declaration />
         </article>
       </main>
+      <footer className="mx-auto max-w-5xl px-2 pb-4 text-center text-xs text-gray-500 print:hidden">
+        This site uses Google Analytics to count visits and clicks. No ads, no
+        Google signals, and no personal details are collected. Questions:{' '}
+        <a
+          href="mailto:namaste@lakhanmandloi.in"
+          className="underline hover:text-violet-600"
+          data-track-event="contact_click"
+          data-track-label="email_footer"
+        >
+          namaste@lakhanmandloi.in
+        </a>
+      </footer>
     </>
   );
 }

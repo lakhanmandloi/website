@@ -11,18 +11,19 @@ import Image from 'next/image';
 import { CAREER_START, yearsSince } from '@/utils/date';
 
 export default function Headline() {
-  const size = 20;
   interface ILink {
     displayText: string;
     printText?: string;
     tooltip?: string;
     href: string;
-    icon: any;
+    icon: React.ReactNode;
     display: boolean;
     print: boolean;
+    trackLabel: string;
   }
   const links: ILink[] = [
     {
+      trackLabel: 'email',
       displayText: 'namaste@lakhanmandloi.in',
       printText: 'namaste@lakhanmandloi.in',
       tooltip: 'Send me an email',
@@ -32,6 +33,7 @@ export default function Headline() {
       print: true
     },
     {
+      trackLabel: 'website',
       displayText: 'lakhanmandloi.in',
       printText: 'lakhanmandloi.in',
       tooltip: 'Visit my website',
@@ -41,6 +43,7 @@ export default function Headline() {
       print: true
     },
     {
+      trackLabel: 'github',
       displayText: 'lakhanmandloi',
       printText: 'lakhanmandloi',
       tooltip: 'See my GitHub Profile',
@@ -50,6 +53,7 @@ export default function Headline() {
       print: true
     },
     {
+      trackLabel: 'linkedin',
       displayText: 'lakhanmandloi',
       printText: 'lakhanmandloi',
       tooltip: 'See my LinkedIn Profile',
@@ -75,6 +79,8 @@ export default function Headline() {
         href={link.href}
         target="_blank"
         rel="noopener noreferrer"
+        data-track-event="contact_click"
+        data-track-label={link.trackLabel}
       >
         <span className="mr-2 text-gray-400 print:mr-1">{link.icon}</span>
         <span className="print:hidden">{link.displayText}</span>
@@ -133,6 +139,8 @@ export default function Headline() {
             href="https://www.tafttech.ai/?utm_source=lakhanmandloi.in&utm_medium=referral&utm_campaign=personal_site&utm_content=header_cta"
             target="_blank"
             rel="noopener"
+            data-track-event="cta_click"
+            data-track-label="work_with_taft_ai"
           >
             Work with TAFT AI →
           </a>
