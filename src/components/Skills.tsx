@@ -49,8 +49,8 @@ import {
   SiVercel,
   SiWordpress
 } from '@icons-pack/react-simple-icons';
-// simple-icons dropped the OpenAI logo; react-icons still ships it.
-import { SiOpenai } from 'react-icons/si';
+// simple-icons no longer ships the OpenAI logo; Remix Icon (via react-icons) does.
+import { RiOpenaiFill } from 'react-icons/ri';
 
 const size = 14;
 interface Stack {
@@ -100,7 +100,7 @@ const stacks: Stack[] = [
         name: 'Claude Code'
       },
       {
-        icon: <SiOpenai size={size} />,
+        icon: <RiOpenaiFill size={size} />,
         name: 'ChatGPT',
         tooltip: 'ChatGPT / OpenAI'
       }
