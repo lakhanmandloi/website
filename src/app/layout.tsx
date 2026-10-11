@@ -4,16 +4,18 @@ import type { Metadata } from 'next';
 import { GoogleAnalytics } from '@next/third-parties/google';
 import { Inter } from 'next/font/google';
 
+import { CAREER_START, yearsSince } from '@/utils/date';
+
 const inter = Inter({ subsets: ['latin'], display: 'swap' });
 
 const siteUrl = 'https://lakhanmandloi.in';
-const description =
-  'Co-Founder at TAFT AI Technologies · Full Stack Developer with 10+ years of experience across frontend, backend, and DevOps.';
+const title = 'Lakhan Mandloi — Co-founder, TAFT AI · Forward Deployed Engineer';
+const description = `Co-founder of TAFT AI Technologies Private Limited · Forward Deployed Engineer with ${yearsSince(CAREER_START)}+ years shipping products to production across frontend, backend, and DevOps.`;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'Lakhan Mandloi — Full Stack Developer',
+    default: title,
     template: '%s · Lakhan Mandloi'
   },
   description,
@@ -26,20 +28,20 @@ export const metadata: Metadata = {
     type: 'website',
     url: siteUrl,
     siteName: 'Lakhan Mandloi',
-    title: 'Lakhan Mandloi — Full Stack Developer',
+    title,
     description,
     images: [
       {
         url: '/images/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Lakhan Mandloi — Full Stack Developer'
+        alt: title
       }
     ]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lakhan Mandloi — Full Stack Developer',
+    title,
     description,
     images: ['/images/og-image.jpg']
   },
@@ -55,11 +57,13 @@ const personJsonLd = {
   name: 'Lakhan Mandloi',
   url: siteUrl,
   image: `${siteUrl}/images/avatar.jpg`,
-  jobTitle: 'Full Stack Developer',
+  jobTitle: 'Co-founder and Forward Deployed Engineer',
   worksFor: {
     '@type': 'Organization',
-    name: 'TAFT AI Technologies',
-    url: 'https://tafttech.ai'
+    name: 'TAFT AI Technologies Private Limited',
+    alternateName: 'TAFT AI',
+    url: 'https://www.tafttech.ai',
+    sameAs: ['https://www.linkedin.com/company/taft-ai/']
   },
   address: {
     '@type': 'PostalAddress',

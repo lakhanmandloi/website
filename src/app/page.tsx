@@ -5,6 +5,10 @@ import Header from '@/components/Header';
 import Profile from '@/components/Profile';
 import Projects from '@/components/Projects';
 import Skills from '@/components/Skills';
+
+// Rebuild the page daily so "Present" durations and years of experience stay current.
+export const revalidate = 86400;
+
 export default function Home() {
   return (
     <>

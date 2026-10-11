@@ -1,7 +1,5 @@
 import { cache } from 'react';
 
-export const revalidate = 3600;
-
 export interface Company {
   id: string;
   name: string;
@@ -42,10 +40,10 @@ export const getExperience = cache(async () => {
   const experience: Company[] = [
     {
       id: 'tafttech',
-      name: 'TAFT AI Technologies',
+      name: 'TAFT AI Technologies Private Limited',
       logo: '/images/logo-taftaitech.png',
-      url: 'https://tafttech.ai',
-      location: 'Indore, Madhya Pradesh, India',
+      url: 'https://www.tafttech.ai',
+      location: 'India · Hybrid',
       type: 'Full Time',
       startDate: '2026-06-01',
       roles: [
@@ -53,9 +51,9 @@ export const getExperience = cache(async () => {
           id: 'tafttech-cofounder',
           title: 'Co-Founder',
           responsibilities: `
-          - Co-founded TAFT AI Technologies, building AI-driven products and engineering services.
-          - Drive product direction, technical architecture, and engineering standards across the stack.
-          - Own infrastructure, DevOps, and full-stack delivery from concept to production.
+          - Co-founded TAFT AI to deliver AI products and engineering that ships.
+          - Work as a forward deployed engineer with clients: scoping, building across frontend, backend and DevOps, and running it in production.
+          - Drive product direction, technical architecture, and engineering standards, using AI tools to ship faster without dropping quality.
           `,
           startDate: '2026-06-01'
         }
@@ -75,7 +73,7 @@ export const getExperience = cache(async () => {
           id: 'revive-devops',
           title: 'DevOps Engineer',
           responsibilities: `
-          - Sole DevOps engineer owning the entire CI/CD, infrastructure, and deployment lifecycle.
+          - Sole DevOps engineer owning the entire CI/CD, infrastructure, and deployment lifecycle across their SIP and e-commerce systems.
           - Design, provision, and maintain cloud infrastructure with a focus on reliability, security, and cost efficiency.
           - Automate build, test, and release pipelines, and set up monitoring, logging, and alerting.
           `,
@@ -177,7 +175,7 @@ export const getExperience = cache(async () => {
           - Design, develop, and rigorously test websites while ensuring responsiveness, cross-browser compatibility, security, performance optimization, and code quality in adherence to coding standards.
           - Screening and interviewing candidates for frontend development roles.
           `,
-          startDate: '2019-06-01',
+          startDate: '2019-07-01',
           endDate: '2019-09-20'
         },
         {
@@ -188,7 +186,7 @@ export const getExperience = cache(async () => {
           - In numerous projects, I served as the main point of contact for clients, where I evaluated project requirements, formulated efficient solutions, developed project roadmaps, and upheld transparent communication by providing regular updates to ensure client contentment.
           `,
           startDate: '2015-01-21',
-          endDate: '2019-05-30'
+          endDate: '2019-06-30'
         }
       ],
       projects: [
@@ -259,10 +257,10 @@ export const getExperience = cache(async () => {
           ]
         },
         {
-          id: 'tekdi-artificiers',
-          title: 'Artificiers CSS Library',
+          id: 'tekdi-artificers',
+          title: 'Artificers CSS Library',
           url: 'https://github.com/lakhanmandloi/artificers',
-          details: `It is a utility-first CSS library that followed a similar approach to Tailwind CSS, built when Tailwind CSS didn't existed.`,
+          details: `It is a utility-first CSS library that followed a similar approach to Tailwind CSS, built before Tailwind CSS existed.`,
           roles: ['Frontend Developer', 'Technical Lead'],
           keyAchievements: `
           - Recognizing its capabilities, it gained widespread adoption at the company level and became a staple in numerous products & projects.

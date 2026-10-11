@@ -106,8 +106,8 @@ export default function Headline() {
               </span>
             </h1>
             <div className="mb-3 text-sm text-gray-500 xl:mb-0 print:mb-3 print:text-sm">
-              Co-Founder, TAFT AI Technologies · Full Stack Developer (
-              {yearsSince(CAREER_START)}+ Years)
+              Co-founder, TAFT AI Technologies Private Limited · Forward
+              Deployed Engineer ({yearsSince(CAREER_START)}+ Years)
             </div>
           </div>
           <div className="flex flex-col items-end justify-between">
@@ -128,6 +128,14 @@ export default function Headline() {
             <MapPinIcon className="mr-2 w-4 text-gray-400" />
             Indore, Madhya Pradesh, India
           </address>
+          <a
+            className="inline-flex items-center rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-violet-700 print:hidden"
+            href="https://www.tafttech.ai"
+            target="_blank"
+            rel="noopener"
+          >
+            Work with TAFT AI →
+          </a>
           {/* <a
             className="group flex max-w-xs rounded-lg bg-violet-500 font-semibold text-white transition-transform hover:scale-x-105 print:hidden"
             href="/pdfs/Resume-Lakhan_Mandloi-v5.0.pdf"

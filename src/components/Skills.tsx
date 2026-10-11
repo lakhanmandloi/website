@@ -7,6 +7,7 @@ import {
   SiBootstrap,
   SiBun,
   SiCircleci,
+  SiClaude,
   SiCloudflare,
   SiCss,
   SiDocker,
@@ -48,10 +49,13 @@ import {
   SiVercel,
   SiWordpress
 } from '@icons-pack/react-simple-icons';
+// simple-icons dropped the OpenAI logo; react-icons still ships it.
+import { SiOpenai } from 'react-icons/si';
 
 const size = 14;
 interface Stack {
   name:
+    | 'AI-Assisted Engineering'
     | 'Frontend Development'
     | 'Backend Development'
     | 'CMS Development'
@@ -73,6 +77,35 @@ interface Skill {
 }
 
 const stacks: Stack[] = [
+  {
+    name: 'AI-Assisted Engineering',
+    order: 0,
+    skills: [
+      {
+        icon: (
+          <SiClaude
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Claude'
+      },
+      {
+        icon: (
+          <SiClaude
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Claude Code'
+      },
+      {
+        icon: <SiOpenai size={size} />,
+        name: 'ChatGPT',
+        tooltip: 'ChatGPT / OpenAI'
+      }
+    ]
+  },
   {
     name: 'Frontend Development',
     order: 1,
@@ -291,7 +324,7 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Postgresql'
+        name: 'PostgreSQL'
       },
       {
         icon: (
@@ -324,7 +357,7 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Wordpress'
+        name: 'WordPress'
       }
     ]
   },

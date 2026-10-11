@@ -24,26 +24,27 @@ export const formatDate = (date?: string) => {
 export const formatDuration = (startDate: string, endDate?: string) => {
   return `${formatDate(startDate)} - ${formatDate(endDate)}`;
 };
+const plural = (count: number, singular: string, pluralForm: string) =>
+  `${count} ${count === 1 ? singular : pluralForm}`;
+
+// Counts calendar months inclusively, like LinkedIn (Jun–Oct = 5 mos).
 export const formatCalculatedDuration = (
   startDate: string,
   endDate?: string
 ) => {
-  const parsedStartDate = parseDate(startDate);
-  const parsedEndDate = endDate ? parseDate(endDate) : new Date();
-  const years =
-    parsedEndDate.getMonth() >= parsedStartDate.getMonth()
-      ? parsedEndDate.getFullYear() - parsedStartDate.getFullYear()
-      : parsedEndDate.getFullYear() - parsedStartDate.getFullYear() - 1;
-  const daysAdjustment =
-    parsedEndDate.getDate() + parsedStartDate.getDate() >= 28 ? 1 : 0;
-  const months =
-    parsedEndDate.getMonth() >= parsedStartDate.getMonth()
-      ? parsedEndDate.getMonth() - parsedStartDate.getMonth() + daysAdjustment
-      : 12 +
-        parsedEndDate.getMonth() -
-        parsedStartDate.getMonth() +
-        daysAdjustment;
-  return `${years} yrs ${months} mos`;
+  const start = parseDate(startDate);
+  const end = endDate ? parseDate(endDate) : new Date();
+  const totalMonths =
+    (end.getFullYear() - start.getFullYear()) * 12 +
+    (end.getMonth() - start.getMonth()) +
+    1;
+  const years = Math.floor(totalMonths / 12);
+  const months = totalMonths % 12;
+  const parts = [
+    years > 0 ? plural(years, 'yr', 'yrs') : '',
+    months > 0 || years === 0 ? plural(months, 'mo', 'mos') : ''
+  ];
+  return parts.filter(Boolean).join(' ');
 };
 export const duration = (startDate: string, endDate?: string) => {
   return `${formatDuration(startDate, endDate)} · ${formatCalculatedDuration(
