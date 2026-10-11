@@ -121,6 +121,7 @@ const jsonLd = {
         'Cloud management',
         'SOC 2 compliance',
         'Healthcare technology',
+        'US healthcare',
         'E-commerce',
         'Financial services technology',
         'Education technology (edtech)'

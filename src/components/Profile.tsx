@@ -15,9 +15,9 @@ export default function Profile() {
         infrastructure behind them, with SOC 2-ready security.{' '}
         {yearsSince(CAREER_START)}+ years building products across frontend,
         backend and DevOps, including leading projects as a tech lead, in
-        healthcare, e-commerce, finance and edtech. I care about building
-        user-friendly products that work reliably in production and have a
-        positive impact on people and the environment.
+        healthcare (including US healthcare projects), e-commerce, finance and
+        edtech. I care about building user-friendly products that work reliably
+        in production and have a positive impact on people and the environment.
       </p>
     </section>
   );
