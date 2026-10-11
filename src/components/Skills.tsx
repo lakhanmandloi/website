@@ -5,6 +5,7 @@ import {
   SiBun,
   SiCircleci,
   SiClaude,
+  SiClickhouse,
   SiCloudflare,
   SiCss,
   SiDocker,
@@ -21,6 +22,7 @@ import {
   SiJavascript,
   SiJekyll,
   SiJenkins,
+  SiJest,
   SiJira,
   SiJoomla,
   SiJquery,
@@ -49,9 +51,10 @@ import {
   SiVercel,
   SiWordpress
 } from '@icons-pack/react-simple-icons';
-// simple-icons dropped the OpenAI, AWS and LinkedIn logos; react-icons still ships them.
+// simple-icons dropped the OpenAI, AWS, Azure and LinkedIn logos; react-icons still ships them.
 import { FaAws, FaLinkedin } from 'react-icons/fa';
 import { RiOpenaiFill } from 'react-icons/ri';
+import { VscAzure } from 'react-icons/vsc';
 
 const size = 14;
 interface Stack {
@@ -119,6 +122,10 @@ const stacks: Stack[] = [
       {
         icon: '',
         name: 'AI Agents'
+      },
+      {
+        icon: '',
+        name: 'Vibe Coding'
       }
     ]
   },
@@ -247,7 +254,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Angular'
+        name: 'Angular',
+        hide: true
       },
       {
         icon: (
@@ -266,7 +274,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Bootstrap'
+        name: 'Bootstrap',
+        hide: true
       },
       {
         icon: (
@@ -296,7 +305,8 @@ const stacks: Stack[] = [
           />
         ),
         name: 'SCSS',
-        tooltip: 'SCSS / Sass'
+        tooltip: 'SCSS / Sass',
+        hide: true
       }
     ]
   },
@@ -329,7 +339,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'PHP'
+        name: 'PHP',
+        hide: true
       },
       {
         icon: (
@@ -339,6 +350,15 @@ const stacks: Stack[] = [
           />
         ),
         name: 'PostgreSQL'
+      },
+      {
+        icon: (
+          <SiClickhouse
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'ClickHouse'
       },
       {
         icon: (
@@ -368,6 +388,7 @@ const stacks: Stack[] = [
   {
     name: 'CMS Development',
     order: 4,
+    hide: true,
     skills: [
       {
         icon: (
@@ -392,6 +413,7 @@ const stacks: Stack[] = [
   {
     name: 'Static Site Generation',
     order: 5,
+    hide: true,
     skills: [
       {
         icon: (
@@ -411,6 +433,15 @@ const stacks: Stack[] = [
       {
         icon: '',
         name: 'Playwright'
+      },
+      {
+        icon: (
+          <SiJest
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Jest'
       }
     ]
   },
@@ -455,20 +486,20 @@ const stacks: Stack[] = [
     name: 'Practices',
     order: 8,
     skills: [
-      'Full-Stack Development',
-      'Front-End Development',
-      'Software Development',
-      'Web Development',
-      'Web Applications',
-      'Software as a Service (SaaS)',
-      'User Experience (UX)',
-      'User Interface Design',
-      'Responsive Web Design',
-      'Technical Leadership',
-      'Agile Methodologies',
-      'Scrum Master',
-      'Requirements Gathering'
-    ].map((name) => ({ icon: '', name }))
+      { name: 'Full-Stack Development' },
+      { name: 'Front-End Development', hide: true },
+      { name: 'Software Development', hide: true },
+      { name: 'Web Development', hide: true },
+      { name: 'Web Applications', hide: true },
+      { name: 'Software as a Service (SaaS)' },
+      { name: 'User Experience (UX)' },
+      { name: 'User Interface Design' },
+      { name: 'Responsive Web Design', hide: true },
+      { name: 'Technical Leadership' },
+      { name: 'Agile Methodologies' },
+      { name: 'Scrum Master' },
+      { name: 'Requirements Gathering' }
+    ].map((skill) => ({ icon: '', ...skill }))
   },
   {
     name: 'DevOps & Cloud',
@@ -490,8 +521,7 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Kubernetes',
-        hide: true
+        name: 'Kubernetes'
       },
       {
         icon: (
@@ -524,6 +554,14 @@ const stacks: Stack[] = [
         name: 'DNS Management'
       },
       {
+        icon: <VscAzure size={size} />,
+        name: 'Microsoft Azure'
+      },
+      {
+        icon: '',
+        name: 'Microsoft Sentinel'
+      },
+      {
         icon: (
           <SiCloudflare
             color="default"
@@ -549,7 +587,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Jenkins'
+        name: 'Jenkins',
+        hide: true
       },
       {
         icon: (
@@ -558,7 +597,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'CircleCI'
+        name: 'CircleCI',
+        hide: true
       },
       {
         icon: (
