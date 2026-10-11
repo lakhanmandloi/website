@@ -72,7 +72,7 @@ export default function Headline() {
   const LinkTag = ({ link }: { link: ILink }) => {
     return (
       <a
-        className={`mb-1 flex cursor-pointer items-center text-sm text-gray-500 transition-colors hover:text-violet-600 md:mr-4 xl:mr-0 xl:ml-4 print:mr-4 print:mb-1 print:text-xs ${
+        className={`mb-1 flex cursor-pointer items-center text-sm whitespace-nowrap text-gray-500 transition-colors hover:text-violet-600 print:mb-1 print:text-xs ${
           !link.display ? 'hidden' : 'flex'
         } ${!link.print ? 'print:hidden' : 'print:flex'}`}
         title={link.tooltip}
@@ -112,12 +112,12 @@ export default function Headline() {
               </span>
             </h1>
             <div className="mb-3 text-sm text-gray-500 xl:mb-0 print:mb-3 print:text-sm">
-              Co-founder, TAFT AI Technologies Private Limited · Forward
-              Deployed Engineer ({yearsSince(CAREER_START)}+ Years)
+              Co-founder, TAFT AI · Forward Deployed Engineer ·{' '}
+              {yearsSince(CAREER_START)}+ yrs
             </div>
           </div>
-          <div className="flex flex-col items-end justify-between">
-            <nav className="flex flex-col flex-wrap md:flex-row print:flex-row">
+          <div className="flex shrink-0 flex-col items-end justify-between">
+            <nav className="flex flex-col md:flex-row md:flex-nowrap md:gap-x-5 print:flex-row print:gap-x-4">
               {links.map((link) => {
                 return (
                   <LinkTag

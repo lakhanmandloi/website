@@ -1,7 +1,4 @@
 import {
-  //SiAmazonec2,
-  //SiAmazonrds,
-  //SiAmazons3,
   SiAngular,
   SiApollographql,
   SiBootstrap,
@@ -15,7 +12,10 @@ import {
   SiFigma,
   SiGit,
   SiGithubactions,
+  SiGithubcopilot,
   SiGnubash,
+  SiGoogleanalytics,
+  SiGoogletagmanager,
   SiGraphql,
   SiHtml5,
   SiJavascript,
@@ -26,6 +26,7 @@ import {
   SiJquery,
   SiKubernetes,
   SiLinux,
+  SiMetabase,
   SiMui,
   SiMysql,
   SiNextdotjs,
@@ -33,7 +34,6 @@ import {
   SiNodedotjs,
   SiPhoenixframework,
   SiPhp,
-  //SiPlaywright,
   SiPostgresql,
   SiPrisma,
   SiPython,
@@ -49,7 +49,8 @@ import {
   SiVercel,
   SiWordpress
 } from '@icons-pack/react-simple-icons';
-// simple-icons no longer ships the OpenAI logo; Remix Icon (via react-icons) does.
+// simple-icons dropped the OpenAI, AWS and LinkedIn logos; react-icons still ships them.
+import { FaAws, FaLinkedin } from 'react-icons/fa';
 import { RiOpenaiFill } from 'react-icons/ri';
 
 const size = 14;
@@ -62,6 +63,8 @@ interface Stack {
     | 'Static Site Generation'
     | 'DevOps & Cloud'
     | 'Testing'
+    | 'Analytics & Marketing'
+    | 'Practices'
     | 'Other'
     | 'Currently Learning';
   skills: Skill[];
@@ -69,7 +72,7 @@ interface Stack {
   order?: number;
 }
 interface Skill {
-  icon: any;
+  icon: React.ReactNode;
   name: string;
   tooltip?: string;
   hide?: boolean;
@@ -103,6 +106,19 @@ const stacks: Stack[] = [
         icon: <RiOpenaiFill size={size} />,
         name: 'ChatGPT',
         tooltip: 'ChatGPT / OpenAI'
+      },
+      {
+        icon: (
+          <SiGithubcopilot
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'GitHub Copilot'
+      },
+      {
+        icon: '',
+        name: 'AI Agents'
       }
     ]
   },
@@ -231,8 +247,7 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Angular',
-        hide: true
+        name: 'Angular'
       },
       {
         icon: (
@@ -251,8 +266,7 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Bootstrap',
-        hide: true
+        name: 'Bootstrap'
       },
       {
         icon: (
@@ -281,8 +295,8 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'SASS',
-        hide: true
+        name: 'SCSS',
+        tooltip: 'SCSS / Sass'
       }
     ]
   },
@@ -333,7 +347,21 @@ const stacks: Stack[] = [
             size={size}
           />
         ),
-        name: 'Prisma'
+        name: 'Prisma',
+        tooltip: 'Prisma ORM'
+      },
+      {
+        icon: '',
+        name: 'Elysia'
+      },
+      {
+        icon: (
+          <SiGraphql
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'GraphQL Yoga'
       }
     ]
   },
@@ -363,7 +391,7 @@ const stacks: Stack[] = [
   },
   {
     name: 'Static Site Generation',
-    hide: true,
+    order: 5,
     skills: [
       {
         icon: (
@@ -378,19 +406,69 @@ const stacks: Stack[] = [
   },
   {
     name: 'Testing',
-    hide: true,
+    order: 6,
     skills: [
       {
-        /*icon: (
-          <SiPlaywright
-            color="default"
-            size={size}
-          />
-        ),*/
         icon: '',
         name: 'Playwright'
       }
     ]
+  },
+  {
+    name: 'Analytics & Marketing',
+    order: 7,
+    skills: [
+      {
+        icon: (
+          <SiGoogleanalytics
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Google Analytics'
+      },
+      {
+        icon: (
+          <SiGoogletagmanager
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Google Tag Manager'
+      },
+      {
+        icon: (
+          <SiMetabase
+            color="default"
+            size={size}
+          />
+        ),
+        name: 'Metabase'
+      },
+      {
+        icon: <FaLinkedin size={size} />,
+        name: 'LinkedIn Marketing'
+      }
+    ]
+  },
+  {
+    name: 'Practices',
+    order: 8,
+    skills: [
+      'Full-Stack Development',
+      'Front-End Development',
+      'Software Development',
+      'Web Development',
+      'Web Applications',
+      'Software as a Service (SaaS)',
+      'User Experience (UX)',
+      'User Interface Design',
+      'Responsive Web Design',
+      'Technical Leadership',
+      'Agile Methodologies',
+      'Scrum Master',
+      'Requirements Gathering'
+    ].map((name) => ({ icon: '', name }))
   },
   {
     name: 'DevOps & Cloud',
@@ -425,8 +503,25 @@ const stacks: Stack[] = [
         name: 'Terraform'
       },
       {
+        icon: <FaAws size={size} />,
+        name: 'AWS',
+        tooltip: 'Amazon Web Services'
+      },
+      {
+        icon: <FaAws size={size} />,
+        name: 'Amazon EC2'
+      },
+      {
+        icon: <FaAws size={size} />,
+        name: 'Amazon S3'
+      },
+      {
+        icon: <FaAws size={size} />,
+        name: 'Amazon RDS'
+      },
+      {
         icon: '',
-        name: 'AWS'
+        name: 'DNS Management'
       },
       {
         icon: (

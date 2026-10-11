@@ -14,10 +14,14 @@
 
 ## Skills
 
-- AI-assisted engineering: Claude, Claude Code, ChatGPT
-- Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, GraphQL
-- Backend: Node.js, Bun, PHP, PostgreSQL, Prisma
-- DevOps and cloud: Docker, Terraform, AWS, GitHub Actions, Jenkins, CircleCI, Nginx, Linux, Vercel
+- AI-assisted engineering: Claude, Claude Code, ChatGPT, GitHub Copilot, AI agents
+- Frontend: React, Next.js, TypeScript, JavaScript, Tailwind CSS, HTML, CSS, SCSS, GraphQL, Angular, Bootstrap
+- Backend: Node.js, Bun, Elysia, GraphQL Yoga, PHP, PostgreSQL, Prisma
+- DevOps and cloud: Docker, Terraform, AWS (EC2, S3, RDS), DNS management, GitHub Actions, Jenkins, CircleCI, Nginx, Linux, Vercel
+- CMS and static sites: Joomla, WordPress, Jekyll
+- Testing: Playwright
+- Analytics and marketing: Google Analytics, Google Tag Manager, Metabase, LinkedIn marketing
+- Practices: full-stack development, SaaS, UX and UI design, responsive web design, technical leadership, Agile and Scrum, requirements gathering
 
 ## Links
 
