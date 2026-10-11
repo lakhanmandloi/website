@@ -14,7 +14,7 @@ export default function Profile() {
         software, fine-tune models where it pays off, and run the cloud
         infrastructure behind them, with SOC 2-ready security.{' '}
         {yearsSince(CAREER_START)}+ years building products across frontend,
-        backend and DevOps, including leading projects as a tech lead, across
+        backend and DevOps, including leading projects as a tech lead, in
         healthcare, e-commerce, finance and edtech. I care about building
         user-friendly products that work reliably in production and have a
         positive impact on people and the environment.
